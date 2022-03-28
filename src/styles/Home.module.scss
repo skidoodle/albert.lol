@@ -1,0 +1,151 @@
+@import '_variables';
+
+.bodySection {
+    margin-top: 8rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    animation: fadeIn .4s forwards;
+    transition: all .2s ease-in-out;
+}
+
+.mainLayout {
+    h1 {
+        line-height: .2;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    p {
+        color: $secondary-color;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+
+.iconLayout {
+    margin-bottom: 5%;
+
+    svg {
+        font-size: 1.2em;
+        cursor: pointer;
+        margin-right: 7%;
+        margin-bottom: 1em;
+    }
+}
+
+.time,
+.weather,
+.spotify {
+    animation: fadeIn .6s forwards;
+    opacity: 0;
+    font-size: 1em;
+}
+.time svg,
+.weather svg {
+    font-size: .9rem;
+}
+
+.time {
+    animation-delay: 0.2s;
+}
+
+.weather {
+    opacity: 0;
+    animation-delay: 0.5s;
+
+    img {
+        float: left;
+    }
+
+    p {
+        display: inline;
+    }
+
+    a {
+        font-size: 1em;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #C7D2FE;
+    }
+}
+    
+.spotify {
+    font-size: .9em;
+    margin-top: 5%;
+    opacity: 0;
+    animation-delay: .7s;
+    padding: 1rem 1rem 1.8rem 1rem;
+    border: 1px solid $spotify-box-color;
+    border-radius: .5rem;
+    cursor: pointer;
+
+    img {
+        border-radius: 10px;
+        float: left;
+        margin-right: 5%;
+    }
+
+    p {
+        display: inline;
+    }
+
+    .tinyText {
+        font-weight: 300;
+        font-size: .8em;
+
+        svg {
+            margin-top: 5px;
+            color: #1DB954;
+        }
+    }
+}
+
+
+.footerLayout {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            color: #C7D2FE
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .bodySection {
+        margin-left: 30%;
+        margin-right: 45%;
+    }
+
+    .iconLayout {
+        margin-bottom: 2%;
+    }
+
+    .spotify {
+        margin-top: 8%;
+        width: 80%;
+    }
+}
+
+@media(min-height: 800px) {
+    .bodySection {
+        margin-top: 15rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
