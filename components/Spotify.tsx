@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useLastFM } from 'use-last-fm'
-import styles from '@/styles/Home.module.scss'
+import styles from 'styles/Home.module.scss'
 
 const Spotify = () => {
     const lastFM = useLastFM('albrtadam', 'f6d19bc25ca340225c70c3d386cd4eab');

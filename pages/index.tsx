@@ -1,13 +1,13 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import Body from '@/components/Body'
-import Footer from '@/components/Footer'
-import Icon from '@/components/Icon'
-import IconLayout from '@/components/IconLayout'
-import MainLayout from '@/components/MainLayout'
-import Spotify from '@/components/Spotify'
-import Time from '@/components/Time'
-import Weather from '@/components/Weather'
+import Body from 'components/Body'
+import Footer from 'components/Footer'
+import Icon from 'components/Icon'
+import IconLayout from 'components/IconLayout'
+import MainLayout from 'components/MainLayout'
+import Spotify from 'components/Spotify'
+import Time from 'components/Time'
+import Weather from 'components/Weather'
 
 const Home = ({data}: any) => {
     return(
