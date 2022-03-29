@@ -11,7 +11,7 @@ const Icon = ({icon, reference, copy = false} : {icon: any, reference: any, copy
                         <FontAwesomeIcon icon={icon} />
                     </a>
                 ) : (
-                    <a href={reference} target='_blank' rel="noopener noreferrer" aria-label="Icon">
+                    <a href={reference} target='_blank' rel='noopener noreferrer' aria-label="Icon">
                         <FontAwesomeIcon icon={icon} />
                     </a>
                 )

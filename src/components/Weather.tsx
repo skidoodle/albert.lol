@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from '../styles/Home.module.scss'
+import styles from '@/styles/Home.module.scss'
 
 const Weather = ({data}: {data: any}) => {
     const { temp: temperature } = data.main

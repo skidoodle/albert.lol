@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
-
-import styles from '../styles/Home.module.scss'
+import styles from '@/styles/Home.module.scss'
 
 const Timer = () => {
     const [date, setDate] = useState(new Date())
