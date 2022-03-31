@@ -10,7 +10,7 @@ const Weather = ({data}: {data: any}) => {
         _02d: ['fas', 'cloud-sun'], _02n: ['fas', 'cloud-moon'],
         _03d: ['fas', 'cloud'], _03n: ['fas', 'cloud'],
         _04d: ['fas', 'clouds'], _04n: ['fas', 'clouds'],
-        _09d: ['fas', 'cloud-drizzle'], _09n: ['fas', 'cloud-drizzle'],
+        _09d: ['fas', 'cloud-showers-heavy'], _09n: ['fas', 'cloud-showers-heavy'],
         _10d: ['fas', 'cloud-showers-heavy'], _10n: ['fas', 'cloud-showers-heavy'],
         _11d: ['fas', 'cloud-bolt-sun'], _11n: ['fas', 'cloud-bolt-moon'],
         _13d: ['fas', 'snow-flake'], _13n: ['fas', 'snow-flake'],

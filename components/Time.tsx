@@ -14,7 +14,10 @@ const Timer = () => {
 
     return(
         <div className={styles.time}>
-            <p><FontAwesomeIcon icon={['fas', 'clock']} /> {date.toLocaleDateString('en-GB', { dateStyle: 'short' }) + ' • ' + date.toLocaleTimeString('en-GB', { timeStyle: 'medium', hour12: true,  timeZone: 'Europe/Budapest'}).toUpperCase()}</p>
+            <p><FontAwesomeIcon icon={['fas', 'clock']} /> {date.toLocaleString('en-GB', {
+                timeZone: 'Europe/Budapest',
+                hour12: true
+            }).toUpperCase()}</p>
         </div>
     )
 }
