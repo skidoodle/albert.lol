@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaClock } from 'react-icons/fa';
 import { useEffect, useState } from 'react'
 import styles from 'styles/Home.module.scss'
 
@@ -14,7 +14,7 @@ const Timer = () => {
 
     return(
         <div className={styles.time}>
-            <p><FontAwesomeIcon icon={['fas', 'clock']} /> {date.toLocaleDateString('en-GB', { dateStyle: 'short' }) + ' • ' + date.toLocaleTimeString('en-GB', { timeStyle: 'medium', hour12: true,  timeZone: 'Europe/Budapest'}).toUpperCase()}</p>
+            <p><FaClock /> {date.toLocaleDateString('en-GB', { dateStyle: 'short' }) + ' • ' + date.toLocaleTimeString('en-GB', { timeStyle: 'medium', hour12: true,  timeZone: 'Europe/Budapest'}).toUpperCase()}</p>
         </div>
     )
 }

@@ -27,7 +27,7 @@
     margin-bottom: 5%;
 
     svg {
-        font-size: 1.2em;
+        font-size: 1.4em;
         cursor: pointer;
         margin-right: 7%;
         margin-bottom: 1em;
@@ -53,7 +53,7 @@
 .weather {
     opacity: 0;
     animation-delay: 0.5s;
-
+    
     img {
         float: left;
     }
@@ -62,9 +62,10 @@
         display: inline;
     }
 
-    a {
-        font-size: 1em;
+    span {
+        font-size: .8rem;
     }
+    
     a:hover {
         text-decoration: none;
         color: #C7D2FE;

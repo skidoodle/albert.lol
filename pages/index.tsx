@@ -8,6 +8,9 @@ import MainLayout from 'components/MainLayout'
 import Spotify from 'components/Spotify'
 import Time from 'components/Time'
 import Weather from 'components/Weather'
+import { FaSteam, FaGithub, FaEnvelope } from 'react-icons/fa'
+import { RiInstagramFill } from 'react-icons/ri'
+import { SiDiscord } from 'react-icons/si' 
 
 const Home = ({data}: any) => {
     return(
@@ -18,11 +21,11 @@ const Home = ({data}: any) => {
             <Body>
                 <MainLayout />
                 <IconLayout>
-                    <Icon icon={['fab', 'discord']} reference={'albert#8838'} copy={true} />
-                    <Icon icon={['fab', 'steam']} reference={'https://steamcommunity.com/id/_albert'} copy={false} />
-                    <Icon icon={['fab', 'github']} reference={'https://github.com/skidoodle'} copy={false} />
-                    <Icon icon={['fa', 'envelope']} reference={'hello@albrt.hu'} copy={true} />
-                    <Icon icon={['fab', 'instagram']} reference={'https://instagram.com/albertadam_'} copy={false} />
+                    <Icon icon={<FaGithub />} reference={'https://github.com/skidoodle'} copy={false} />
+                    <Icon icon={<FaSteam />} reference={'https://steamcommunity.com/id/_albert'} copy={false} />
+                    <Icon icon={<FaEnvelope />} reference={'hello@albrt.hu'} copy={true} />
+                    <Icon icon={<RiInstagramFill />} reference={'https://instagram.com/albertadam_'} copy={false} />
+                    <Icon icon={<SiDiscord />} reference={'albert#8838'} copy={true} />
                 </IconLayout>
                 <Time />
                 <Weather data={data}/>

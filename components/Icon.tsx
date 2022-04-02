@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import toast, { Toaster } from 'react-hot-toast';
 import copy from 'copy-to-clipboard'
 
@@ -8,11 +7,11 @@ const Icon = ({icon, reference, copy = false} : {icon: any, reference: any, copy
             { 
                 copy ? (
                     <a onClick={() => doThings(reference)}>
-                        <FontAwesomeIcon icon={icon} />
+                        {icon}
                     </a>
                 ) : (
                     <a href={reference} target='_blank' rel='noopener noreferrer' aria-label="Icon">
-                        <FontAwesomeIcon icon={icon} />
+                        {icon}
                     </a>
                 )
             }

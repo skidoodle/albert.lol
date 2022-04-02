@@ -9,18 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
     "@swc/core": "^1.2.160",
     "copy-to-clipboard": "^3.3.1",
+    "csstype": "^3.0.10",
+    "goober": "2.1.8",
     "next": "12.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hot-toast": "^2.2.0",
-    "goober": "2.1.8",
-    "csstype": "^3.0.10",
+    "react-icons": "^4.3.1",
     "sass": "^1.49.9",
     "use-last-fm": "^0.6.1"
   },
