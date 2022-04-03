@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useLastFM } from 'use-last-fm'
+import { FaSpotify } from 'react-icons/fa'
 import styles from 'styles/Home.module.scss'
 
 const Spotify = () => {
@@ -22,7 +22,7 @@ const Spotify = () => {
                 </>
             }
             <div className={styles.tinyText}>
-                <FontAwesomeIcon icon={['fab', 'spotify']} /> Spotify
+                <FaSpotify /> Spotify
             </div>
         </div>
     )
