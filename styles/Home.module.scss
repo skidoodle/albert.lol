@@ -4,8 +4,6 @@
     margin-top: 8rem;
     margin-left: 10%;
     margin-right: 10%;
-    animation: fadeIn .4s forwards;
-    transition: all .2s ease-in-out;
 }
 
 .mainLayout {
@@ -29,31 +27,18 @@
     svg {
         font-size: 1.4em;
         cursor: pointer;
-        margin-right: 7%;
+        margin-right: 6%;
         margin-bottom: 1em;
     }
 }
 
-.time,
-.weather,
-.spotify {
-    animation: fadeIn .6s forwards;
-    opacity: 0;
-    font-size: 1em;
-}
-.time svg,
-.weather svg {
-    font-size: .9rem;
-}
-
 .time {
-    animation-delay: 0.2s;
+    svg {
+        font-size: .9em;
+    }
 }
 
 .weather {
-    opacity: 0;
-    animation-delay: 0.5s;
-    
     img {
         float: left;
     }
@@ -70,17 +55,17 @@
         text-decoration: none;
         color: #C7D2FE;
     }
+    svg {
+        font-size: .9em;
+    }
 }
     
 .spotify {
-    font-size: .9em;
+    font-size: 1em;
     margin-top: 5%;
-    opacity: 0;
-    animation-delay: .7s;
     padding: 1rem 1rem 1.8rem 1rem;
     border: 1px solid $spotify-box-color;
     border-radius: .5rem;
-    cursor: pointer;
 
     img {
         border-radius: 10px;
@@ -139,14 +124,5 @@
 @media(min-height: 800px) {
     .bodySection {
         margin-top: 15rem;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }

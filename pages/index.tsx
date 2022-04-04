@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import FadeIn from 'react-fade-in'
 import Body from 'components/Body'
 import Footer from 'components/Footer'
 import Icon from 'components/Icon'
@@ -19,17 +20,21 @@ const Home = ({data}: any) => {
                 <title>albert</title>
             </Head>
             <Body>
-                <MainLayout />
-                <IconLayout>
-                    <Icon icon={<FaGithub />} reference={'https://github.com/skidoodle'} copy={false} />
-                    <Icon icon={<FaSteam />} reference={'https://steamcommunity.com/id/_albert'} copy={false} />
-                    <Icon icon={<FaEnvelope />} reference={'hello@albrt.hu'} copy={true} />
-                    <Icon icon={<RiInstagramFill />} reference={'https://instagram.com/albertadam_'} copy={false} />
-                    <Icon icon={<SiDiscord />} reference={'albert#8838'} copy={true} />
-                </IconLayout>
-                <Time />
-                <Weather data={data}/>
-                <Spotify />
+                <FadeIn>
+                <div><MainLayout /></div>
+                <div>
+                    <IconLayout>
+                        <Icon icon={<FaGithub />} reference={'https://github.com/skidoodle'} copy={false} />
+                        <Icon icon={<FaSteam />} reference={'https://steamcommunity.com/id/_albert'} copy={false} />
+                        <Icon icon={<FaEnvelope />} reference={'hello@albrt.hu'} copy={true} />
+                        <Icon icon={<RiInstagramFill />} reference={'https://instagram.com/albertadam_'} copy={false} />
+                        <Icon icon={<SiDiscord />} reference={'albert#8838'} copy={true} />
+                    </IconLayout>
+                    </div>
+                <div><Time /></div>
+                <div><Weather data={data} /></div>
+                <div><Spotify /></div>
+                </FadeIn>
             </Body>
             <Footer />
         </>
