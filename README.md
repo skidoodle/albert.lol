@@ -2,4 +2,4 @@
 Built with Next.js ♥
 
 
-#### koszi [boss](https://github.com/suvikgotrekt)
+#### [boss](https://github.com/suvikgotrekt)
