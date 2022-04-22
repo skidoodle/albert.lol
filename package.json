@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@swc/core": "^1.2.162",
+    "@swc/core": "^1.2.160",
     "copy-to-clipboard": "^3.3.1",
     "csstype": "^3.0.10",
     "goober": "2.1.8",
