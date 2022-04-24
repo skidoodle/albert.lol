@@ -17,7 +17,7 @@ const Spotify = () => {
                 </>
                 :
                 <>
-                    <img src='https://i.albrt.hu/66e8e4c6.webp' width={50} height={50} alt=""/>
+                    <img src='song_art.png' width={50} height={50} alt=""/>
                     <p>Not listening to anything</p>
                 </>
             }
