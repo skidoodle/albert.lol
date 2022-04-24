@@ -5,11 +5,14 @@ import Icon from 'components/Icon'
 import IconLayout from 'components/IconLayout'
 import MainLayout from 'components/MainLayout'
 import Spotify from 'components/Spotify'
-import Time from 'components/Time'
 import Weather from 'components/Weather'
 import { FaSteam, FaGithub, FaEnvelope } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
-import { SiDiscord } from 'react-icons/si' 
+import { SiDiscord } from 'react-icons/si'
+import dynamic from 'next/dynamic'
+const Time = dynamic(() => import('components/Time'), {
+    ssr: false,
+})
 
 const Home = ({data}: any) => {
     return (
