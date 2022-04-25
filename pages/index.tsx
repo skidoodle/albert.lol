@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import FadeIn from 'react-fade-in'
 import Body from 'components/Body'
 import Icon from 'components/Icon'
@@ -17,6 +18,9 @@ const Time = dynamic(() => import('components/Time'), {
 const Home = ({data}: any) => {
     return (
         <>
+            <Head>
+                <title>albert</title>
+            </Head>
             <Body>
                 <FadeIn>
                     <MainLayout />

@@ -5,6 +5,8 @@ import styles from 'styles/Home.module.scss'
 
 const now = () => dayjs().tz()
 
+const format = 'hhA'
+
 const Time = () => {
   const [date, setDate] = useState(now())
 
