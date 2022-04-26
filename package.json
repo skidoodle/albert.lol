@@ -10,7 +10,7 @@
     "buildexport": "next build && next export"
   },
   "dependencies": {
-    "@swc/core": "^1.2.171",
+    "@swc/core": "^1.2.172",
     "copy-to-clipboard": "^3.3.1",
     "csstype": "^3.0.10",
     "dayjs": "^1.11.1",
