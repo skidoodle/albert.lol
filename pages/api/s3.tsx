@@ -1,9 +1,10 @@
-import aws from 'aws-sdk';
+import aws, { ConfigurationOptions } from 'aws-sdk';
+import { ServiceConfigurationOptions } from 'aws-sdk/lib/service';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    aws.config.update({
+    aws.config.s3 = ({
         accessKeyId: process.env.ACCESS_KEY,
         secretAccessKey: process.env.SECRET_KEY,
         region: process.env.REGION,
