@@ -19,7 +19,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return acc + curr.Size! / 1024 / 1024 / 1024
     }, 0)
 
-    res.setHeader('Cache-Control', 's-maxage=86400');
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+      )
     res.status(200).json (JSON.stringify({
         'objectCount': data.KeyCount,
         'totalSize': (Math.round(totalsize * 100) / 100)
