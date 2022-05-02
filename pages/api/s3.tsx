@@ -1,5 +1,4 @@
 import aws, { ConfigurationOptions } from 'aws-sdk';
-import { ServiceConfigurationOptions } from 'aws-sdk/lib/service';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 
