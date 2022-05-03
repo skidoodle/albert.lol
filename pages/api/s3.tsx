@@ -21,8 +21,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     size = Number(size.toFixed(2));
     let objects = data.Contents!.length
     res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
-    res.status(200).json(JSON.stringify({
+    res.status(200).json({
         object: objects,
         size: size
-    }, null, 2))
+    });
 }
