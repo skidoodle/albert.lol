@@ -1,6 +1,5 @@
-import aws, { ConfigurationOptions } from 'aws-sdk';
+import aws from 'aws-sdk';
 import { NextApiRequest, NextApiResponse } from 'next';
-
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     aws.config.s3 = ({
@@ -12,19 +11,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
     const s3 = new aws.S3();
     const params = {
-        Bucket: 'i.albrt.hu'
+        Bucket: process.env.BUCKET!,
     }
     const data = await s3.listObjectsV2(params).promise()
-    let totalsize = data.Contents!.reduce((acc, curr) => {
-        return acc + curr.Size! / 1024 / 1024 / 1024
-    }, 0)
-
-    res.setHeader(
-        'Cache-Control',
-        'public, s-maxage=10, stale-while-revalidate=59'
-      )
-    res.status(200).json (JSON.stringify({
-        'objectCount': data.KeyCount,
-        'totalSize': (Math.round(totalsize * 100) / 100)
+    let size = 0;
+    data.Contents!.forEach(item => {
+        size += item.Size! / 1024 / 1024 / 1024;
+    });
+    size = Number(size.toFixed(2));
+    let objects = data.Contents!.length
+    res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
+    res.status(200).json(JSON.stringify({
+        object: objects,
+        size: size
     }, null, 2))
 }
