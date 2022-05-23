@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@swc/core": "^1.2.186",
-    "aws-sdk": "^2.1138.0",
+    "aws-sdk": "^2.1141.0",
     "copy-to-clipboard": "^3.3.1",
     "csstype": "^3.1.0",
     "dayjs": "^1.11.2",
