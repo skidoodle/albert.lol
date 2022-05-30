@@ -6,7 +6,7 @@ const Icon = ({icon, reference, copy = false} : {icon: any, reference: any, copy
         <>
             { 
                 copy ? (
-                    <a onClick={() => doThings(reference)}>
+                    <a href='javascript:void(0)' onClick={() => doThings(reference)}>
                         {icon}
                     </a>
                 ) : (
