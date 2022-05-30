@@ -39,5 +39,6 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
             startAfter = data.Contents!.slice(-1)[0].Key;
         }
     }
+    res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
     res.json({ object: objects, size: Number(size.toFixed(2)) })
 }
