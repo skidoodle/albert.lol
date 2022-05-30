@@ -29,7 +29,7 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
         }
         const data = await s3.listObjectsV2(params).promise()
 
-        data.Contents?.forEach((object: { Size: any }) => {
+        data.Contents?.forEach((object: any) => {
             objects++
             size += object.Size! / 1024 / 1024 / 1024
         })
