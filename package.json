@@ -23,7 +23,7 @@
     "react-dom": "^18.1.0",
     "react-fade-in": "^2.0.1",
     "react-hot-toast": "^2.2.0",
-    "react-icons": "^4.3.1",
+    "react-icons": "^4.4.0",
     "sass": "^1.52.1",
     "use-last-fm": "^0.6.1"
   },
