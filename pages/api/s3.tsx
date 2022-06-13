@@ -1,28 +1,44 @@
-import aws from 'aws-sdk';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+import aws from 'aws-sdk'
+
+const { BUCKET, ACCESS_KEY, SECRET_KEY, ENDPOINT, REGION } = process.env
+
+export default async function(req: NextApiRequest, res: NextApiResponse) {
     aws.config.s3 = ({
-        accessKeyId: process.env.ACCESS_KEY,
-        secretAccessKey: process.env.SECRET_KEY,
-        region: process.env.REGION,
-        endpoint: process.env.ENDPOINT,
+        accessKeyId: ACCESS_KEY,
+        secretAccessKey: SECRET_KEY,
+        region: REGION,
+        endpoint: ENDPOINT,
         signatureVersion: 'v4'
-    });
-    const s3 = new aws.S3();
-    const params = {
-        Bucket: process.env.BUCKET!,
+    })
+
+    let isTruncated: boolean | undefined = true
+    let startAfter
+
+    let objects = 0
+    let size = 0
+
+    const s3 = new aws.S3()
+
+    while(isTruncated) {
+        let params: any = { Bucket: BUCKET }
+        
+        if(startAfter) {
+            params.StartAfter = startAfter
+        }
+        const data = await s3.listObjectsV2(params).promise()
+
+        data.Contents?.forEach((object: any) => {
+            objects++
+            size += object.Size! / 1024 / 1024 / 1024
+        })
+
+        isTruncated = data.IsTruncated
+        if (isTruncated) {
+            startAfter = data.Contents!.slice(-1)[0].Key;
+        }
     }
-    const data = await s3.listObjectsV2(params).promise()
-    let size = 0;
-    data.Contents!.forEach(item => {
-        size += item.Size! / 1024 / 1024 / 1024;
-    });
-    size = Number(size.toFixed(2));
-    let objects = data.Contents!.length
     res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
-    res.status(200).json({
-        object: objects,
-        size: size
-    });
+    res.json({ object: objects, size: Number(size.toFixed(2)) })
 }
