@@ -23,11 +23,11 @@ const Icon = ({icon, reference, copy = false} : {icon: any, reference: any, copy
 const doThings = (value: any) => {
     copy(value)
     toast.remove()
-    toast.success('Successfully copied to clipboard', {
+    toast.success('Copied to clipboard', {
         style: {
             background: '#111',
             color: '#fff',
-            fontSize: '1.1rem'
+            fontSize: '1em'
         }
     })
 }
