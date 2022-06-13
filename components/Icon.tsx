@@ -15,7 +15,7 @@ const Icon = ({icon, reference, copy = false} : {icon: any, reference: any, copy
                     </a>
                 )
             }
-            <Toaster position='bottom-left' reverseOrder={false} />
+            <Toaster position='bottom-center' reverseOrder={false} />
         </>
     )
 }
