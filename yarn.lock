@@ -402,10 +402,10 @@ ast-types-flow@^0.0.7:
   resolved "https://registry.yarnpkg.com/ast-types-flow/-/ast-types-flow-0.0.7.tgz#f70b735c6bca1a5c9c22d982c3e39e7feba3bdad"
   integrity sha1-9wtzXGvKGlycItmCw+Oef+ujva0=
 
-aws-sdk@^2.1146.0:
-  version "2.1146.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1146.0.tgz#1b1983447baddbe7105b2ca238a3039c82155bab"
-  integrity sha512-lg83hvrK2oiJVnklUVMXIJkeYX2nlqhvxIFlZ2wfoaJyvdGsEcOUdZ/EMDgiS0V2jwGS8CtTUypcW/t2S6gdcQ==
+aws-sdk@^2.1158.0:
+  version "2.1158.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1158.0.tgz#924fb6dda1acecb1dc1c8901095cf64d6acdade4"
+  integrity sha512-uHYzZMGE+b50sWXaLhga4aD1SpB3+DEZclAkg9aYz2pDZlSDTOMh3uJ/ufsMBs7VcDKGS7mQRibCmCbwRGTIlg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
