@@ -11,7 +11,7 @@
     "buildexport": "next build && next export"
   },
   "dependencies": {
-    "@swc/core": "^1.2.196",
+    "@swc/core": "^1.2.205",
     "aws-sdk": "^2.1146.0",
     "copy-to-clipboard": "^3.3.1",
     "csstype": "^3.1.0",
@@ -28,7 +28,7 @@
     "use-last-fm": "^0.6.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.38",
+    "@types/node": "18.0.0",
     "@types/react": "^18.0.10",
     "@types/react-dom": "^18.0.4",
     "eslint": "8.16.0",
