@@ -15,7 +15,7 @@
     "aws-sdk": "^2.1146.0",
     "copy-to-clipboard": "^3.3.1",
     "csstype": "^3.1.0",
-    "dayjs": "^1.11.2",
+    "dayjs": "^1.11.3",
     "dotenv": "^16.0.1",
     "goober": "2.1.9",
     "next": "12.1.6",
@@ -28,7 +28,7 @@
     "use-last-fm": "^0.6.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.38",
+    "@types/node": "18.0.0",
     "@types/react": "^18.0.10",
     "@types/react-dom": "^18.0.4",
     "eslint": "8.16.0",
