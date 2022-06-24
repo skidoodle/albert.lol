@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 const Document = () => {
     return (
         <>
-            <Html lang='en'>
+            <Html lang='zxx'>
                 <Head>
                     <link rel='preconnect' href='https://vitals.vercel-insights.com' />
                     <link rel='preconnect' href='https://ws.audioscrobbler.com' />
