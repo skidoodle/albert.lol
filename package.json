@@ -19,7 +19,7 @@
     "dotenv": "^16.0.1",
     "goober": "2.1.9",
     "next": "12.1.6",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-dom": "^18.1.0",
     "react-fade-in": "^2.0.1",
     "react-hot-toast": "^2.2.0",
@@ -28,8 +28,8 @@
     "use-last-fm": "^0.6.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.38",
-    "@types/react": "^18.0.10",
+    "@types/node": "18.0.0",
+    "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.4",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
