@@ -27,7 +27,7 @@ const Home = ({data}: any) => {
                         <IconLayout>
                             <Icon icon={<FaGithub />} reference={'https://github.com/skidoodle'} copy={false} />
                             <Icon icon={<FaSteam />} reference={'https://steamcommunity.com/id/_albert'} copy={false} />
-                            <Icon icon={<FaEnvelope />} reference={'hello@albrt.hu'} copy={true} />
+                            <Icon icon={<FaEnvelope />} reference={'contact@albert.lol'} copy={true} />
                             <Icon icon={<RiInstagramFill />} reference={'https://instagram.com/albertadam_'} copy={false} />
                             <Icon icon={<SiDiscord />} reference={'albert#8838'} copy={true} />
                         </IconLayout>
