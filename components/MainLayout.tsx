@@ -5,7 +5,7 @@ const MainLayout = () => {
         <>
             <div className={styles.mainLayout}>
                 <h1>albert</h1>
-                <p>17-year-old <b>system administrator</b> and student from Hungary</p>
+                <p>18-year-old <b>system administrator</b> and student from Hungary</p>
             </div>
         </>
     )
