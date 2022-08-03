@@ -11,7 +11,7 @@
     "buildexport": "next build && next export"
   },
   "dependencies": {
-    "aws-sdk": "^2.1187.0",
+    "aws-sdk": "^2.1188.0",
     "copy-to-clipboard": "^3.3.2",
     "@swc/core": "^1.2.222",
     "csstype": "^3.1.0",
