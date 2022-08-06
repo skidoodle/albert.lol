@@ -1,6 +1,6 @@
 const path = require('path')
 
-export default {
+module.export = {
   productionBrowserSourceMaps: true,
   swcMinify: true,
   sassOptions: {
