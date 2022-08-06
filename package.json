@@ -24,7 +24,7 @@
     "react-fade-in": "^2.0.1",
     "react-hot-toast": "^2.3.0",
     "react-icons": "^4.4.0",
-    "sass": "^1.54.0",
+    "sass": "^1.54.3",
     "use-last-fm": "^0.6.1"
   },
   "devDependencies": {
