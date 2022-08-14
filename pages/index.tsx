@@ -14,7 +14,7 @@ import { FaSpotify } from 'react-icons/fa'
 const fetcher = (url: RequestInfo) => fetch(url).then(r => r.json())
 
 export default function() {
-    const { data: spotify } = useSWR('/api/spotify', fetcher)
+    const { data: spotify } = useSWR('/api/spotify', fetcher, { refreshInterval: 1000 })
 
     if(!spotify) return <Loading />
 
@@ -40,7 +40,7 @@ export default function() {
                         {
                             spotify.song
                             ?   <Link href={`${spotify.song.url}`}>
-                                    <a className='text-[#32a866]'> { spotify.song.artist + ' - ' + spotify.song.title }</a>
+                                    <a target='_blank' className='text-[#32a866]'> { spotify.song.title || 'nothing' }</a>
                                 </Link> 
 
                             : <a className='text-[#32a866]'> nothing</a>
