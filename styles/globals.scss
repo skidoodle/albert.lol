@@ -1,26 +1,56 @@
-@import '_variables';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html,
-body {
-    background-color: $background-color;
-    color: $primary-color;
-    padding: 0;
-    margin: 0;
-    font-family: $font;
-    font-weight: 400;
+@layer base {
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: #8a58e0 transparent;
+    }
+
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    ul, ol {
+        list-style: revert;
+    }
 }
 
-::selection {
-  background: rgba($selection-color, .7);
-  color: $primary-color;
+@layer components {
+    ::selection {
+        background-color: #8039e2;
+        color: #fff;
+    }
+
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #8a58e0;
+        border-radius: 10px;
+    }
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-* {
-    box-sizing: border-box;
+@layer utilities {
+    .gradient {
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(to right, #800a18, #a82044, #9e4a60);
+        animation: gradient 5s ease infinite
+    }
+    
+    @keyframes gradient {
+        0%, 100% {
+            background-size: 200%;
+            background-position: left center;
+        }
+    
+        50% {
+            background-size: 200%;
+            background-position: right center;
+        }
+    }
 }
