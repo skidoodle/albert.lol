@@ -6,14 +6,18 @@ import FadeIn from 'react-fade-in'
 import profilePic from '../public/profile.webp'
 
 import { socials } from 'components/data/socials'
+import { Footer } from 'components/Footer' 
 import { Icon } from 'components/Icon' 
 import { Toaster } from 'react-hot-toast'
 import { FaSpotify } from 'react-icons/fa'
+
+import profilePic from '../public/profile.webp'
 
 const fetcher = (url: RequestInfo) => fetch(url).then(r => r.json())
 
 export default function() {
     const { data: spotify } = useSWR('/api/spotify', fetcher, { refreshInterval: 1000 })
+    
     if(!spotify) return
 
     return (
@@ -53,7 +57,8 @@ export default function() {
                     ))}
                 </div>
             </div>
-
+            
+            <Footer />
             <Toaster />
         </FadeIn>
     )
