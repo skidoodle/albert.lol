@@ -1,13 +1,15 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 import { socials } from 'components/data/socials'
-
 import { Icon } from 'components/Icon' 
-import { Toaster } from 'react-hot-toast'
-import { GetServerSideProps } from 'next'
-import { FaSpotify } from 'react-icons/fa'
 import { Footer } from 'components/Footer'
+
+import { Toaster } from 'react-hot-toast'
+import { FaSpotify } from 'react-icons/fa'
+
+import { GetServerSideProps } from 'next'
 
 export default function({ spotify }: any) {
     return(
@@ -28,8 +30,16 @@ export default function({ spotify }: any) {
                 <div className='mt-3 flex justify-center items-center'>
                     <FaSpotify className='text-[#32a866]' />&nbsp;
 
-                    <p className='font-semibold'>Listening to 
-                        <span className='text-[#32a866]'> { spotify.song?.artist - spotify.song?.title || 'nothing' }</span>
+                    <p className='font-semibold'>Listening to
+                        {
+                            spotify.song
+                            ?   <Link href={`${spotify.song.url}`}>
+                                    <a className='text-[#32a866]'> { spotify.song.artist + ' - ' + spotify.song.title }</a>
+                                </Link> 
+
+                            : <a className='text-[#32a866]'> nothing</a>
+                        }
+
                     </p>
                 </div>
 

@@ -13,7 +13,7 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
     let nowplaying = Boolean(track[0]['@attr']?.nowplaying)
 
     if(nowplaying) {
-        res.status(200).json({
+        return res.status(200).json({
             nowplaying, 
             song: {
                 artist: artist['#text'], 
@@ -24,5 +24,5 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
         })
     }
 
-    res.status(200).json({ nowplaying })
+    return res.status(200).json({ nowplaying })
 }
