@@ -1,52 +1,57 @@
-import { GetServerSideProps } from 'next'
-import Head from 'next/head'
-import FadeIn from 'react-fade-in'
-import Body from 'components/Body'
-import Icon from 'components/Icon'
-import IconLayout from 'components/IconLayout'
-import MainLayout from 'components/MainLayout'
-import Spotify from 'components/Spotify'
-import Weather from 'components/Weather'
-import { FaSteam, FaGithub, FaEnvelope } from 'react-icons/fa'
-import { RiInstagramFill } from 'react-icons/ri'
-import { SiDiscord } from 'react-icons/si'
-import dynamic from 'next/dynamic'
-const Time = dynamic(() => import('components/Time'), {
-    ssr: false,
-})
+import Image from 'next/image'
+import React from 'react'
 
-const Home = ({data}: any) => {
-    return (
+import { socials } from 'components/data/socials'
+
+import { Icon } from 'components/Icon' 
+import { Toaster } from 'react-hot-toast'
+import { GetServerSideProps } from 'next'
+import { FaSpotify } from 'react-icons/fa'
+import { Footer } from 'components/Footer'
+
+export default function({ spotify }: any) {
+    return(
         <>
-            <Head>
-                <title>albert</title>
-            </Head>
-            <Body>
-                <FadeIn>
-                    <MainLayout />
-                        <IconLayout>
-                            <Icon icon={<FaGithub />} reference={'https://github.com/skidoodle'} copy={false} />
-                            <Icon icon={<FaSteam />} reference={'https://steamcommunity.com/id/_albert'} copy={false} />
-                            <Icon icon={<FaEnvelope />} reference={'contact@albert.lol'} copy={true} />
-                            <Icon icon={<RiInstagramFill />} reference={'https://instagram.com/albertadam_'} copy={false} />
-                            <Icon icon={<SiDiscord />} reference={'albert#8838'} copy={true} />
-                        </IconLayout>
-                    <Time />
-                    <Weather data={data} />
-                    <Spotify />
-                </FadeIn>
-            </Body>
+            <div className='px-8 w-11/12 m-auto rounded-lg max-w-4xl'>
+                <div className='flex flex-col justify-center items-center mt-32 md:mt-56'>
+                    <Image src='https://cdn.discordapp.com/avatars/637745537369767936/9cc2e60b7df282b5be9fa701660c651d.webp?size=512' className="rounded-full text-center" height={100} width={100}/>
+                    <h1 className='text-4xl font-bold -mt-1'>albert</h1>
+
+                    <p className='text-[#9ca3af] text-xl flex flex-wrap items-center justify-center whitespace-pre-wrap'>
+                        { Math.floor((new Date().getTime() - new Date('2004.07.22').getTime()) / (1000 * 60 * 60 * 24 * 365.25)) } 
+                            yrs old <b className='font-semibold'>system administrator</b> and student from <b className='font-bold'>Hungary</b>
+                    </p>
+                </div>
+
+                <hr className='border-t-[#727277] w-4/5 md:w-2/5 m-auto mt-5 md:mt-8'/>
+
+                <div className='mt-3 flex justify-center items-center'>
+                    <FaSpotify className='text-[#32a866]' />&nbsp;
+
+                    <p className='font-semibold'>Listening to 
+                        <span className='text-[#32a866]'> { spotify.song?.artist - spotify.song?.title || 'nothing' }</span>
+                    </p>
+                </div>
+
+                <div className='flex justify-between items-center text-3xl mt-11 md:mt-16 max-w-sm m-auto'>
+                    { socials.map(social => (
+                        <Icon key={ social.id } reference={ social.ref } copyValue={ social.copyValue }>{ React.createElement(social.icon) }</Icon>
+                    ))}
+                </div>
+            </div>
+            
+            <Footer />
+            <Toaster />
         </>
     )
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=47.51&lon=19.04&appid=1b3c10c18e894eaf1fd63eedde53fa54&units=metric')
-    const data = await response.json()
+    const spotify = await fetch(`${process.env.PRODUCTION}/api/spotify`, {
+        method: 'GET'
+    }).then((res) => res.json())
 
     return {
-        props: { data }
+        props: { spotify }
     }
 }
-
-export default Home

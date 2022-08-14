@@ -1,35 +1,30 @@
-import toast, { Toaster } from 'react-hot-toast';
+import Link from 'next/link'
+
+import toast from 'react-hot-toast'
 import copy from 'copy-to-clipboard'
 
-const Icon = ({icon, reference, copy = false} : {icon: any, reference: any, copy?: boolean}) => {
-    return(
-        <>
-            { 
-                copy ? (
-                    <a href='javascript:void(0)' onClick={() => doThings(reference)}>
-                        {icon}
-                    </a>
-                ) : (
-                    <a href={reference} target='_blank' rel='noopener noreferrer' aria-label="Icon">
-                        {icon}
-                    </a>
-                )
-            }
-            <Toaster position='bottom-center' reverseOrder={false} />
-        </>
+type Icon = {
+    children: any,
+    reference: string,
+    copyValue?: boolean,
+}
+
+const notify = () => toast.success('Copied to clipboard', {
+    style: {
+        background: '#0f1012',
+        color: '#fff',
+        fontSize: '1em'
+    }
+})
+
+export const Icon = ({ children, reference, copyValue }: Icon) => {
+    if(copyValue) {
+        return <a className={`cursor-pointer`} onClick={ () => { notify(), copy(reference) }} >{ children }</a> 
+    }
+
+    return (
+        <Link href={ reference }> 
+            <a target='_blank' className={`cursor-pointer`}>{ children }</a>
+        </Link>
     )
 }
-
-const doThings = (value: any) => {
-    copy(value)
-    toast.remove()
-    toast.success('Copied to clipboard', {
-        style: {
-            background: '#111',
-            color: '#fff',
-            fontSize: '1em'
-        }
-    })
-}
-
-export default Icon

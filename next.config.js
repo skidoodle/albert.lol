@@ -1,9 +1,10 @@
-const path = require('path')
-
-module.export = {
-  productionBrowserSourceMaps: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
   swcMinify: true,
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')]
+  images: {
+    domains: ['i.arch.gay', 'cdn.discordapp.com']
   }
 }
+
+module.exports = nextConfig
