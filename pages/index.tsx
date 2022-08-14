@@ -56,7 +56,7 @@ export default function() {
             </div>
 
             <Toaster />
-        </FadeIn>\
+        </FadeIn>
         </>
     )
 }
