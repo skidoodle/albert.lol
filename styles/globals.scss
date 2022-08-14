@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 @layer base {
     html {
@@ -11,10 +10,6 @@
     body {
         background-color: #000;
         color: #fff;
-    }
-
-    ul, ol {
-        list-style: revert;
     }
 }
 
@@ -31,26 +26,5 @@
     ::-webkit-scrollbar-thumb {
         background-color: #8a58e0;
         border-radius: 10px;
-    }
-}
-
-@layer utilities {
-    .gradient {
-        color: transparent;
-        background-clip: text;
-        background-image: linear-gradient(to right, #800a18, #a82044, #9e4a60);
-        animation: gradient 5s ease infinite
-    }
-    
-    @keyframes gradient {
-        0%, 100% {
-            background-size: 200%;
-            background-position: left center;
-        }
-    
-        50% {
-            background-size: 200%;
-            background-position: right center;
-        }
     }
 }
