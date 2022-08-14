@@ -17,7 +17,6 @@ export default function() {
     if(!spotify) return
 
     return (
-        <>
         <FadeIn>
             <div className='px-8 w-11/12 m-auto rounded-lg max-w-4xl'>
                 <div className='flex flex-col justify-center items-center mt-32 md:mt-56'>
@@ -57,6 +56,5 @@ export default function() {
 
             <Toaster />
         </FadeIn>
-        </>
     )
 }
