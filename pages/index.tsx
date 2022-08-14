@@ -1,17 +1,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import useSWR from 'swr'
 
 import { socials } from 'components/data/socials'
 import { Icon } from 'components/Icon' 
 import { Footer } from 'components/Footer'
+import { Loading } from 'components/Loading'
 
 import { Toaster } from 'react-hot-toast'
 import { FaSpotify } from 'react-icons/fa'
 
-import { GetServerSideProps } from 'next'
+const fetcher = (url: RequestInfo) => fetch(url).then(r => r.json())
 
-export default function({ spotify }: any) {
+export default function() {
+    const { data: spotify } = useSWR('/api/spotify', fetcher)
+
+    if(!spotify) return <Loading />
+
     return(
         <>
             <div className='px-8 w-11/12 m-auto rounded-lg max-w-4xl'>
@@ -39,7 +45,6 @@ export default function({ spotify }: any) {
 
                             : <a className='text-[#32a866]'> nothing</a>
                         }
-
                     </p>
                 </div>
 
@@ -54,14 +59,4 @@ export default function({ spotify }: any) {
             <Toaster />
         </>
     )
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-    const spotify = await fetch(`${process.env.PRODUCTION}/api/spotify`, {
-        method: 'GET'
-    }).then((res) => res.json())
-
-    return {
-        props: { spotify }
-    }
 }
