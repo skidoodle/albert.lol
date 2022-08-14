@@ -3,7 +3,6 @@ import Link from 'next/link'
 import React from 'react'
 import useSWR from 'swr'
 import FadeIn from 'react-fade-in'
-import profilePic from '../public/profile.webp'
 
 import { socials } from 'components/data/socials'
 import { Footer } from 'components/Footer' 
