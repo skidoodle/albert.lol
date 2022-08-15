@@ -16,7 +16,6 @@ const fetcher = (url: RequestInfo) => fetch(url).then(r => r.json())
 export default function() {
     const { data: spotify } = useSWR('/api/spotify', fetcher, { refreshInterval: 1000 })
     if(!spotify) return
-
     return (
         <FadeIn>
             <div className='px-8 w-11/12 m-auto rounded-lg max-w-4xl'>
@@ -50,7 +49,13 @@ export default function() {
 
                 <div className='flex justify-between items-center text-3xl mt-11 md:mt-16 max-w-sm m-auto'>
                     { socials.map(social => (
-                        <Icon key={ social.id } aria-label={ social.name } reference={ social.ref } copyValue={ social.copyValue }>{ React.createElement(social.icon) }</Icon>
+                        <Icon
+                            key={ social.id }
+                            reference={ social.ref }
+                            copyValue={ social.copyValue }
+                        >
+                        { React.createElement(social.icon) }
+                        </Icon>
                     ))}
                 </div>
             </div>
