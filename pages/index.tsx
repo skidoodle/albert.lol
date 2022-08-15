@@ -20,10 +20,10 @@ export default function() {
     return (
         <FadeIn>
             <div className='px-8 w-11/12 m-auto rounded-lg max-w-4xl'>
-                <div className='flex flex-col justify-center items-center mt-32 md:mt-56'>
+                <div className='flex flex-col justify-center items-center mt-28 md:mt-36'>
                     <Image src={profilePic} className="rounded-full text-center" height={150} width={150}/>
 
-                    <h1 className='text-4xl font-bold -mt-1'>albert</h1>
+                    <h1 className='text-4xl font-bold mt-1'>albert</h1>
 
                     <p className='text-[#9ca3af] text-xl flex flex-wrap items-center justify-center whitespace-pre-wrap'>
                         { Math.floor((new Date().getTime() - new Date('2004-07-22').getTime()) / (1000 * 60 * 60 * 24 * 365.25)) } 
