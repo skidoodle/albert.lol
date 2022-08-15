@@ -5,7 +5,6 @@ import useSWR from 'swr'
 import FadeIn from 'react-fade-in'
 
 import { socials } from 'components/data/socials'
-import { Footer } from 'components/Footer' 
 import { Icon } from 'components/Icon' 
 import { Toaster } from 'react-hot-toast'
 import { FaSpotify } from 'react-icons/fa'
@@ -16,7 +15,6 @@ const fetcher = (url: RequestInfo) => fetch(url).then(r => r.json())
 
 export default function() {
     const { data: spotify } = useSWR('/api/spotify', fetcher, { refreshInterval: 1000 })
-    
     if(!spotify) return
 
     return (
@@ -28,7 +26,7 @@ export default function() {
                     <h1 className='text-4xl font-bold -mt-1'>albert</h1>
 
                     <p className='text-[#9ca3af] text-xl flex flex-wrap items-center justify-center whitespace-pre-wrap'>
-                        { Math.floor((new Date().getTime() - new Date(07/22/2004).getTime()) / (1000 * 60 * 60 * 24 * 365.25)) } 
+                        { Math.floor((new Date().getTime() - new Date('2004-07-22').getTime()) / (1000 * 60 * 60 * 24 * 365.25)) } 
                             yrs old <b className='font-semibold'>system administrator</b> and student from Hungary
                     </p>
                 </div>
@@ -57,7 +55,6 @@ export default function() {
                 </div>
             </div>
             
-            <Footer />
             <Toaster />
         </FadeIn>
     )
