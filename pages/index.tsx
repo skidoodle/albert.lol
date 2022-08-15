@@ -21,7 +21,7 @@ export default function() {
         <FadeIn>
             <div className='px-8 w-11/12 m-auto rounded-lg max-w-4xl'>
                 <div className='flex flex-col justify-center items-center mt-28 md:mt-36'>
-                    <Image src={profilePic} className="rounded-full text-center" height={150} width={150}/>
+                    <Image src={profilePic} alt='Profile Picture' className="rounded-full text-center" height={150} width={150}/>
 
                     <h1 className='text-4xl font-bold mt-1'>albert</h1>
 
@@ -50,7 +50,7 @@ export default function() {
 
                 <div className='flex justify-between items-center text-3xl mt-11 md:mt-16 max-w-sm m-auto'>
                     { socials.map(social => (
-                        <Icon key={ social.id } reference={ social.ref } copyValue={ social.copyValue }>{ React.createElement(social.icon) }</Icon>
+                        <Icon key={ social.id } aria-label={ social.name } reference={ social.ref } copyValue={ social.copyValue }>{ React.createElement(social.icon) }</Icon>
                     ))}
                 </div>
             </div>
