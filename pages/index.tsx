@@ -19,7 +19,7 @@ export default function() {
     return (
         <FadeIn>
             <div className='px-8 w-11/12 m-auto rounded-lg max-w-4xl'>
-                <div className='flex flex-col justify-center items-center mt-28 md:mt-36'>
+                <div className='flex flex-col justify-center items-center mt-40 md:mt-48 lg:mt-64'>
                     <Image src={profilePic} alt='Profile Picture' className="rounded-full text-center" height={150} width={150}/>
 
                     <h1 className='text-4xl font-bold mt-1'>albert</h1>
