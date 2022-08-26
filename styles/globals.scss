@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        scrollbar-width: thin;
-        scrollbar-color: #8a58e0 transparent;
-    }
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #8a58e0 transparent;
+  }
 
-    body {
-        background-color: #000;
-        color: #fff;
-    }
+  body {
+    background-color: #000;
+    color: #fff;
+  }
 }
 
 @layer components {
-    ::selection {
-        background-color: #8039e2;
-        color: #fff;
-    }
+  ::selection {
+    background-color: #8039e2;
+    color: #fff;
+  }
 
-    ::-webkit-scrollbar {
-        width: 3px;
-    }
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
 
-    ::-webkit-scrollbar-thumb {
-        background-color: #8a58e0;
-        border-radius: 10px;
-    }
+  ::-webkit-scrollbar-thumb {
+    background-color: #8a58e0;
+    border-radius: 10px;
+  }
 }
