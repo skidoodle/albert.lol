@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import useSWR from "swr";
+import React, { useEffect } from "react";
 import FadeIn from "react-fade-in";
 
 import { socials } from "components/data/socials";
@@ -10,14 +9,14 @@ import { Toaster } from "react-hot-toast";
 import { FaSpotify } from "react-icons/fa";
 
 import profilePic from "../public/profile.webp";
+import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 
-const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
+export default function ({ spotify }: any) {
+  const { asPath, replace } = useRouter()
 
-export default function () {
-  const { data: spotify } = useSWR("/api/spotify", fetcher, {
-    refreshInterval: 1000,
-  });
-  if (!spotify) return;
+  useEffect(() => { replace(asPath) }, [spotify])
+
   return (
     <FadeIn>
       <div className="px-8 w-11/12 m-auto rounded-lg max-w-4xl">
@@ -78,4 +77,15 @@ export default function () {
       <Toaster />
     </FadeIn>
   );
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { HOST } = process.env
+
+  const res = await fetch(`${HOST}/api/spotify`)
+  const data = await res.json()
+
+  return {
+    props: { spotify: data }
+  }
 }
