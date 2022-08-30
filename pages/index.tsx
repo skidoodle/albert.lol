@@ -13,9 +13,11 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 
 export default function ({ spotify }: any) {
-  const { asPath, replace } = useRouter()
+  const { asPath, replace } = useRouter();
 
-  useEffect(() => { replace(asPath) }, [spotify])
+  useEffect(() => {
+    replace(asPath);
+  }, [spotify]);
 
   return (
     <FadeIn>
@@ -80,12 +82,12 @@ export default function ({ spotify }: any) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { HOST } = process.env
+  const { HOST } = process.env;
 
-  const res = await fetch(`${HOST}/api/spotify`)
-  const data = await res.json()
+  const res = await fetch(`${HOST}/api/spotify`);
+  const data = await res.json();
 
   return {
-    props: { spotify: data }
-  }
-}
+    props: { spotify: data },
+  };
+};
