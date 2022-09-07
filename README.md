@@ -1,6 +1,6 @@
 # Portfolio v3
 
-An awesome portfolio built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) made by [arch](https://github.com/arch0xd)
+An awesome portfolio built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) 
 
 ## Installation
 
