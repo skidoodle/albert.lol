@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "18.7.15",
-    "@types/react": "18.0.17",
+    "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.8",
     "copy-to-clipboard": "^3.3.2",
