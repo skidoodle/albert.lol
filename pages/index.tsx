@@ -21,8 +21,8 @@ export default function ({ spotify }: any) {
 
   return (
     <FadeIn>
-      <div className="px-8 w-auto m-auto rounded-lg">
-        <div className="flex flex-col justify-center items-center mt-40 md:mt-48 lg:mt-44 xl:mt-64 2xl:mt-128">
+      <div className="px-8 2xl:translate-y-2/3 translate-y-1/3 m-auto max-w-4xl">
+        <div className="flex flex-col justify-center items-center">
           <Image
             src={profilePic}
             alt="Profile Picture"
