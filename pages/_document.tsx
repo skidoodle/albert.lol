@@ -5,10 +5,6 @@ class AppDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta
-            httpEquiv="Content-Security-Policy"
-            content="upgrade-insecure-requests"
-          />
           <link rel="preconnect" href="https://vitals.vercel-insights.com" />\
           <meta name="title" content="albert" />
           <meta name="og:title" content="albert" />
