@@ -5,7 +5,7 @@ class AppDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="preconnect" href="https://vitals.vercel-insights.com" />\
+          <link rel="preconnect" href="https://vitals.vercel-insights.com" />
           <meta name="title" content="albert" />
           <meta name="og:title" content="albert" />
           <meta name="description" content="system administrator" />
