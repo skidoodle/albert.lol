@@ -20,7 +20,7 @@
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.11",
+    "autoprefixer": "^10.4.12",
     "copy-to-clipboard": "^3.3.2",
     "postcss": "^8.4.16",
     "react-hot-toast": "^2.4.0",
