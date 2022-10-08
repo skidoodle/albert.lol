@@ -11,13 +11,22 @@ import { FaSpotify } from "react-icons/fa";
 import profilePic from "../public/profile.webp";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
-export default function ({ spotify }: any) {
-  const { asPath, replace } = useRouter();
+export default function () {
+  const [spotify, setSpotify] = useState("");
 
   useEffect(() => {
-    replace(asPath);
-  }, [spotify]);
+    const interval = setInterval(() => {
+      fetch("/api/spotify")
+        .then((res) => res.json())
+        .then((data) => {
+          setSpotify(data);
+        });
+    }, 9999);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <FadeIn>
@@ -80,14 +89,3 @@ export default function ({ spotify }: any) {
     </FadeIn>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const { HOST } = process.env;
-
-  const res = await fetch(`${HOST}/api/spotify`);
-  const data = await res.json();
-
-  return {
-    props: { spotify: data },
-  };
-};
