@@ -8,13 +8,11 @@ import { Icon } from "components/Icon";
 import { Toaster } from "react-hot-toast";
 import { FaSpotify } from "react-icons/fa";
 
-import profilePic from "../public/profile.webp";
-import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
+import profilePic from "public/profile.webp";
 import { useState } from "react";
 
 export default function () {
-  const [spotify, setSpotify] = useState("nothing");
+  const [spotify, setSpotify] = useState<any>("nothing");
 
   useEffect(() => {
     const interval = setInterval(() => {
