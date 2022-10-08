@@ -58,8 +58,7 @@ export default function () {
 
         <div className="mt-3 flex justify-center items-center">
           <FaSpotify className="text-[#32a866]" />
-          &nbsp;
-          <p className="font-semibold">
+          <p className="font-semibold pl-1">
             Listening to
             {spotify.song ? (
               <Link href={`${spotify.song.url}`}>
