@@ -12,18 +12,22 @@ import profilePic from "public/profile.webp";
 import { useState } from "react";
 
 export default function () {
-  const [spotify, setSpotify] = useState<any>("nothing");
+  const [spotify, setSpotify] = useState<any>("");
+
+  const handleData = () => {
+    fetch("/api/spotify")
+      .then((res) => res.json())
+      .then((data) => setSpotify(data));
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      fetch("/api/spotify")
-        .then((res) => res.json())
-        .then((data) => {
-          setSpotify(data);
-        });
-    }, 9999);
+    handleData();
 
-    return () => clearInterval(interval);
+    return () => {
+      setInterval(() => {
+        handleData();
+      }, 3000);
+    };
   }, []);
 
   return (
@@ -61,7 +65,7 @@ export default function () {
               <Link href={`${spotify.song.url}`}>
                 <a target="_blank" className="text-[#32a866]">
                   {" "}
-                  {spotify.song.title || "nothing"}
+                  {spotify.song.title}
                 </a>
               </Link>
             ) : (
