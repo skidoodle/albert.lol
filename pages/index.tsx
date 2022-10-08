@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function () {
-  const [spotify, setSpotify] = useState("");
+  const [spotify, setSpotify] = useState("nothing");
 
   useEffect(() => {
     const interval = setInterval(() => {
