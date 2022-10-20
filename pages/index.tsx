@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
+import useSWR from "swr";
 import FadeIn from "react-fade-in";
 
 import { socials } from "components/data/socials";
@@ -9,26 +10,14 @@ import { Toaster } from "react-hot-toast";
 import { FaSpotify } from "react-icons/fa";
 
 import profilePic from "public/profile.webp";
-import { useState } from "react";
+
+export const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
 
 export default function () {
-  const [spotify, setSpotify] = useState<any>("");
-
-  const handleData = () => {
-    fetch("/api/spotify")
-      .then((res) => res.json())
-      .then((data) => setSpotify(data));
-  };
-
-  useEffect(() => {
-    handleData();
-
-    return () => {
-      setInterval(() => {
-        handleData();
-      }, 3000);
-    };
-  }, []);
+  var { data: spotify } = useSWR("/api/spotify", fetcher, {
+    refreshInterval: 3000,
+    fallbackData: "loading",
+  });
 
   return (
     <FadeIn>
