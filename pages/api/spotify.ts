@@ -1,28 +1,22 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
+import { SpotifyService } from 'spotify-now-playing'
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
-  const { LASTFM_USERNAME, LASTFM_API } = process.env;
+    const { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN } = process.env;
+    const spotify = new SpotifyService(CLIENT_ID!, CLIENT_SECRET!, REFRESH_TOKEN!)
+    const song = await spotify.getCurrentSong()
 
-  const { recenttracks: response } = await fetch(
-    `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API}&format=json&limit=1`
-  ).then((res) => res.json());
-
-  const { track } = response;
-  const { artist, name, url, image } = track[0];
-
-  let nowplaying = Boolean(track[0]["@attr"]?.nowplaying);
-
-  if (nowplaying) {
-    return res.status(200).json({
-      nowplaying,
+    if(!song.isPlaying) {
+        return res.status(200).json({
+          nowplaying: false,
+        });
+    }
+    res.status(200).json({
+      nowplaying: true,
       song: {
-        artist: artist["#text"],
-        title: name,
-        url: url,
-        image: image[2]["#text"],
-      },
+        artist: song.artist.name,
+        title: song.title,
+        url: song.externalUrl,
+      }
     });
-  }
-
-  return res.status(200).json({ nowplaying });
 }
