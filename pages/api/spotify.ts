@@ -11,6 +11,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
           nowplaying: false,
         });
     }
+    
     res.status(200).json({
       nowplaying: true,
       song: {
