@@ -100,10 +100,10 @@
   dependencies:
     tslib "^2.4.0"
 
-"@types/node@18.8.1":
-  version "18.8.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.1.tgz#33e6759935f7a82821b72fb936e66f6b99a36173"
-  integrity sha512-vuYaNuEIbOYLTLUAJh50ezEbvxrD43iby+lpUA2aa148Nh5kX/AVO/9m1Ahmbux2iU5uxJTNF9g2Y+31uml7RQ==
+"@types/node@18.11.0":
+  version "18.11.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.0.tgz#f38c7139247a1d619f6cc6f27b072606af7c289d"
+  integrity sha512-IOXCvVRToe7e0ny7HpT/X9Rb2RYtElG1a+VshjwT00HxrM2dWBApHQoqsI6WiY7Q03vdf2bCrIGzVrkF/5t10w==
 
 "@types/prop-types@*":
   version "15.7.5"
@@ -185,10 +185,10 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws-sdk@^2.1228.0:
-  version "2.1231.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1231.0.tgz#c02e83b095211d9f6dfb540fd47fa69190af9c0d"
-  integrity sha512-ONBuRsOxsu0zL8u/Vmz49tPWi9D4ls2pjb6szdfSx9VQef7bOnWe9gJpWoA94OTzcjOWsvjsG7UgjvQJkIuPBg==
+aws-sdk@^2.1237.0:
+  version "2.1237.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1237.0.tgz#e1e14cf02ffb4b512b09be9c792edb3f18bc6d88"
+  integrity sha512-yjPtCDtyCPwRoTdO9fUYm2h5yi3Dlnfx3OUzrepVk9gA/byclzwHsVL8SibCw5y/+euGNud9xl67uDRDvzIGcg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -909,10 +909,10 @@ postcss@8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postcss@^8.4.14, postcss@^8.4.17:
-  version "8.4.17"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.17.tgz#f87863ec7cd353f81f7ab2dec5d67d861bbb1be5"
-  integrity sha512-UNxNOLQydcOFi41yHNMcKRZ39NeXlr8AxGuZJsdub8vIb12fHzcq37DTU/QtbI6WLxNg2gF9Z+8qtRwTj1UI1Q==
+postcss@^8.4.14, postcss@^8.4.18:
+  version "8.4.18"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.18.tgz#6d50046ea7d3d66a85e0e782074e7203bc7fbca2"
+  integrity sha512-Wi8mWhncLJm11GATDaQKobXSNEYGUHeQLiQqDFG1qQ5UTDPTEvKw0Xt5NsTpktGTwLps3ByrWsBrG0rB8YQ9oA==
   dependencies:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
@@ -963,10 +963,10 @@ react-hot-toast@^2.4.0:
   dependencies:
     goober "^2.1.10"
 
-react-icons@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
-  integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
+react-icons@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.6.0.tgz#f83eda179af5d02c047449a20b702c858653d397"
+  integrity sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==
 
 react@18.2.0:
   version "18.2.0"
