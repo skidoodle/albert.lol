@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
 import aws from "aws-sdk";
 
 const { BUCKET, ACCESS_KEY, SECRET_KEY, ENDPOINT, REGION } = process.env;
@@ -40,7 +39,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     }
   }
   res.setHeader(
-    "Cache-Control",
+    'Cache-Control',
     "public, s-maxage=10, stale-while-revalidate=59"
   );
   res.json({ object: objects, size: Number(size.toFixed(2)) });

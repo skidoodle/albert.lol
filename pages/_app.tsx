@@ -1,9 +1,9 @@
-import "styles/globals.scss";
-import Head from "next/head";
+import 'styles/globals.scss';
+import Head from 'next/head';
 
-import { AppProps } from "next/app";
+import {AppProps} from 'next/app';
 
-export default function ({ Component, pageProps }: AppProps) {
+export default function ({Component, pageProps}: AppProps) {
   return (
     <>
       <Head>
