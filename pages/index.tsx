@@ -4,17 +4,17 @@ import React from 'react';
 import useSWR from 'swr';
 import FadeIn from 'react-fade-in';
 
-import {socials} from 'components/data/socials';
-import {Icon} from 'components/Icon';
-import {Toaster} from 'react-hot-toast';
-import {FaSpotify} from 'react-icons/fa';
+import { socials } from 'components/data/socials';
+import { Icon } from 'components/Icon';
+import { Toaster } from 'react-hot-toast';
+import { FaSpotify } from 'react-icons/fa';
 
 import profilePic from 'public/profile.webp';
 
 export const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
 
 export default function () {
-  var {data: spotify} = useSWR('/api/spotify', fetcher, {
+  var { data: spotify } = useSWR('/api/spotify', fetcher, {
     refreshInterval: 3000,
     fallbackData: 'loading',
   });
@@ -67,7 +67,8 @@ export default function () {
             <Icon
               key={social.id}
               reference={social.ref}
-              copyValue={social.copyValue}>
+              copyValue={social.copyValue}
+            >
               {React.createElement(social.icon)}
             </Icon>
           ))}

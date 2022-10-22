@@ -19,14 +19,15 @@ const notify = () => {
     });
 };
 
-export const Icon = ({children, reference, copyValue}: Icon) => {
+export const Icon = ({ children, reference, copyValue }: Icon) => {
   if (copyValue) {
     return (
       <a
         className={`cursor-pointer`}
         onClick={() => {
           notify(), copy(reference);
-        }}>
+        }}
+      >
         {children}
       </a>
     );
