@@ -13,7 +13,7 @@ import profilePic from 'public/profile.webp';
 
 export const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
 
-export default function () {
+export default function Main() {
   var { data: spotify } = useSWR('/api/spotify', fetcher, {
     refreshInterval: 3000,
     fallbackData: 'loading',

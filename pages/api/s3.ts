@@ -3,7 +3,7 @@ import aws from "aws-sdk";
 
 const { BUCKET, ACCESS_KEY, SECRET_KEY, ENDPOINT, REGION } = process.env;
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function Storage(req: NextApiRequest, res: NextApiResponse) {
   aws.config.s3 = {
     accessKeyId: ACCESS_KEY,
     secretAccessKey: SECRET_KEY,
