@@ -6,7 +6,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     const spotify = new SpotifyService(CLIENT_ID!, CLIENT_SECRET!, REFRESH_TOKEN!)
     const song = await spotify.getCurrentSong()
 
-    if(!!song|| !song.isPlaying ) {
+    if(!song || !song.isPlaying ) {
         return res.status(200).json({
           nowplaying: false,
         });
