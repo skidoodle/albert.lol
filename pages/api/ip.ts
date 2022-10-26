@@ -1,6 +1,8 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function ip(req: NextApiRequest, res: NextApiResponse){
-    let ip = req.headers['cf-connecting-ip']
-    res.json({ ip: ip });
+    let cf = req.headers['cf-connecting-ip'];
+    let xff = req.headers['x-forwarded-for'];
+    let xri = req.headers['x-real-ip'];
+    res.status(200).json({ cf: cf, xff: xff, xri: xri });
 }
