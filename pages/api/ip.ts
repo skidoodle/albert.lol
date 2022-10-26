@@ -7,8 +7,8 @@ export default async function ip(req: NextApiRequest, res: NextApiResponse){
     let city = req.headers['cf-ipcity'];
     res.status(200).json({
         ip: ip,
-        continent: continent,
+        city: city,
         country: country,
-        city: city
+        continent: continent
     });
 }
