@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import aws from "aws-sdk";
+import { NextApiRequest, NextApiResponse } from 'next';
+import aws from 'aws-sdk';
 
 const { BUCKET, ACCESS_KEY, SECRET_KEY, ENDPOINT, REGION } = process.env;
 
@@ -9,7 +9,7 @@ export default async function Storage(req: NextApiRequest, res: NextApiResponse)
     secretAccessKey: SECRET_KEY,
     region: REGION,
     endpoint: ENDPOINT,
-    signatureVersion: "v4",
+    signatureVersion: 'v4',
   };
 
   let isTruncated: boolean | undefined = true;
@@ -40,7 +40,7 @@ export default async function Storage(req: NextApiRequest, res: NextApiResponse)
   }
   res.setHeader(
     'Cache-Control',
-    "public, s-maxage=10, stale-while-revalidate=59"
+    'public, s-maxage=10, stale-while-revalidate=59'
   );
   res.json({ object: objects, size: Number(size.toFixed(2)) });
 }
