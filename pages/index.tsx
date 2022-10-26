@@ -48,16 +48,18 @@ export default function Main() {
         <div className='mt-3 flex justify-center items-center'>
           <FaSpotify className='text-[#32a866]' />
           <p className='font-semibold pl-1'>
-            Listening to
+            Listening to{' '}
             {spotify.song ? (
-              <Link href={`${spotify.song.url}`}>
-                <a target='_blank' className='text-[#32a866]'>
-                  {' '}
-                  {spotify.song.title}
-                </a>
+              <Link
+                href={`${spotify.song.url}`}
+                target='_blank'
+                className='text-[#32a866]'
+              >
+                {' '}
+                {spotify.song.title}
               </Link>
             ) : (
-              <a className='text-[#32a866]'> nothing</a>
+              <span className='text-[#32a866]'>nothing</span>
             )}
           </p>
         </div>

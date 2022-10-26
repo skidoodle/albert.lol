@@ -22,22 +22,21 @@ const notify = () => {
 export const Icon = ({ children, reference, copyValue }: Icon) => {
   if (copyValue) {
     return (
-      <a
+      <Link
+        href={''}
         className={`cursor-pointer`}
         onClick={() => {
           notify(), copy(reference);
         }}
       >
         {children}
-      </a>
+      </Link>
     );
   }
 
   return (
-    <Link href={reference}>
-      <a target='_blank' className={`cursor-pointer`}>
-        {children}
-      </a>
+    <Link href={reference} target='_blank' className={'cursor-pointer'}>
+      {children}
     </Link>
   );
 };
