@@ -42,5 +42,8 @@ export default async function Storage(req: NextApiRequest, res: NextApiResponse)
     'Cache-Control',
     'public, s-maxage=10, stale-while-revalidate=59'
   );
-  res.json({ object: objects, size: Number(size.toFixed(2)) });
+  res.json({
+    object: objects,
+    size: Number(size.toFixed(2))
+  });
 }

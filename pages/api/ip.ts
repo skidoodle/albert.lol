@@ -2,5 +2,13 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function ip(req: NextApiRequest, res: NextApiResponse){
     let ip = req.headers['cf-connecting-ip'];
-    res.status(200).json({ ip: ip });
+    let continent = req.headers['cf-ipcontinent'];
+    let country = req.headers['cf-ipcountry'];
+    let city = req.headers['cf-ipcity'];
+    res.status(200).json({
+        ip: ip,
+        continent: continent,
+        country: country,
+        city: city
+    });
 }
