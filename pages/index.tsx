@@ -26,6 +26,7 @@ export default function Main() {
           <Image
             src={profilePic}
             alt='Profile Picture'
+            placeholder='blur'
             className='rounded-full text-center'
             height={150}
             width={150}
