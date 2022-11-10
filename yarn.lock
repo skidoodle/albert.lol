@@ -2035,10 +2035,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
-spotify-now-playing@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/spotify-now-playing/-/spotify-now-playing-0.1.7.tgz#363d52aac673ca40874343dd10cc80bbcc489e69"
-  integrity sha512-8aGGdhCOLe50ZwSrmvmujlHccjUHBSNNH+9xjrGCenLPeK9VEqXcgvcFYsUtp3bZK4PWjUf+/PyxvpsrWHBl8Q==
+spotify-now-playing@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/spotify-now-playing/-/spotify-now-playing-1.1.4.tgz#7ef375aef54660b0bad9326452d7cfb77d17cd3d"
+  integrity sha512-oietobF6bYRFvErZX0zS6h558Pu2QiakGGp353/owUlU6W5Qmmyx1W8qsAHf1iL1Z+3vMPT3Ew8or/KEwgCKQQ==
   dependencies:
     axios "^1.1.3"
 
