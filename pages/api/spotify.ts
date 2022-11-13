@@ -15,9 +15,9 @@ export default async function Spotify(req: NextApiRequest, res: NextApiResponse)
     res.status(200).json({
       nowplaying: true,
       song: {
-        artist: song.artist.name,
+        artist: song.artists.name,
         title: song.title,
-        url: song.externalUrl,
+        url: song.url,
       }
     });
 }
