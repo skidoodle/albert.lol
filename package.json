@@ -25,7 +25,7 @@
     "@types/react-dom": "18.0.8",
     "@types/react-dom": "18.0.7",
     "autoprefixer": "^10.4.13",
-    "copy-to-clipboard": "^3.3.2",
+    "copy-to-clipboard": "^3.3.3",
     "eslint": "8.26.0",
     "eslint-config-next": "^13.0.0",
     "postcss": "^8.4.18",
