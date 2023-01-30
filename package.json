@@ -26,7 +26,7 @@
     "autoprefixer": "^10.4.13",
     "copy-to-clipboard": "^3.3.3",
     "eslint": "8.32.0",
-    "eslint-config-next": "^13.1.5",
+    "eslint-config-next": "^13.1.6",
     "postcss": "^8.4.18",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
