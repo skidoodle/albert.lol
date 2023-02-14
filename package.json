@@ -11,9 +11,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^0.1.8",
+    "@vercel/edge-config": "^0.1.1",
     "aws-sdk": "^2.1295.0",
     "next": "^13.1.5",
-    "@vercel/analytics": "^0.1.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fade-in": "^2.0.1",
