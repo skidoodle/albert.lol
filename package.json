@@ -19,7 +19,7 @@
     "react-dom": "^18.2.0",
     "react-fade-in": "^2.0.1",
     "spotify-now-playing": "^1.1.4",
-    "swr": "^2.0.1"
+    "swr": "^2.0.4"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
