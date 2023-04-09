@@ -20,15 +20,15 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      aria-label='Toggle Dark Mode'
+      aria-label='Switch Theme'
       type='button'
-      className='focus:outline-none bg-none xs:bg-gray-200 xs:dark:bg-gray-800 rounded-lg p-3 h-10 w-10 flex items-center justify-center ml-auto'
+      className='mr-5 mt-5 flex ml-auto'
       onClick={() => toggle()}
     >
       {theme === 'light' ? (
-        <BsMoonFill style={{ fill: 'black' }} size={300} />
+        <BsMoonFill style={{ fill: 'black' }} size={25} />
       ) : (
-        <BsSunFill size={300} />
+        <BsSunFill size={25} />
       )}
     </button>
   );
