@@ -1,0 +1,38 @@
+@import url('https://cdn.albert.lol/ClearSansRegular.woff');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Clear Sans', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #8a58e0 transparent;
+  }
+}
+
+@layer components {
+  ::selection {
+    background-color: #8039e2;
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #8a58e0;
+    border-radius: 10px;
+  }
+}
+
+:root {
+  --background: #fff;
+  --foreground: #000;
+}
+
+[data-theme='dark'] {
+  --background: #000;
+  --foreground: #fff;
+}
