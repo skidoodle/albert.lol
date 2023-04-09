@@ -1,11 +1,9 @@
-@import url('https://cdn.albert.lol/ClearSansRegular.woff');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    font-family: 'Clear Sans', sans-serif;
     scrollbar-width: thin;
     scrollbar-color: #8a58e0 transparent;
   }
