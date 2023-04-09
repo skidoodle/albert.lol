@@ -1,12 +1,19 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "albert.lol",
+  "version": "4.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,ts,tsx,md}\""
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true
   },
   "dependencies": {
     "@types/node": "18.15.11",
