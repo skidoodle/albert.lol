@@ -33,12 +33,12 @@ export const NowPlayingCard = () => {
               <Link
                 href={`${spotify.song.url}`}
                 target='_blank'
-                className='text-[#32a866]'
+                className='text-[rgb(50,170,100)]'
               >
                 {truncate(`${spotify.song.title}`, 20)}
               </Link>
             ) : (
-              <span className='text-[#32a866]'>nothing</span>
+              <span className='text-[rgb(50,170,100)]'>nothing</span>
             )}
           </div>
         </div>
