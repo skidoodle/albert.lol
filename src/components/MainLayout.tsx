@@ -15,7 +15,7 @@ export const MainLayout = () => {
             <p className='text-2xl text-gray-600 dark:text-gray-400 mt-2 font-semibold'>
               {Math.floor(
                 (new Date().getTime() - new Date('2004-07-22').getTime()) /
-                  (1000 * 60 * 60 * 24 * 365.25)
+                  (1000 * 60 * 60 * 24 * 365.25),
               )}
               -year-old system administrator
             </p>
