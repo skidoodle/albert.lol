@@ -1,6 +1,6 @@
 {
   "name": "albert.lol",
-  "version": "4.0",
+  "version": "4.20",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -10,7 +10,7 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App ({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
