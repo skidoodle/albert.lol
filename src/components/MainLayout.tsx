@@ -12,7 +12,7 @@ export const MainLayout = () => {
         <div className='ml-[10%] mr-[10%]'>
           <div className='flex flex-col max-w-3xl mx-auto mb-16 mt-32'>
             <h1 className='text-7xl font-bold'>albert</h1>
-            <p className='text-2xl text-gray-600 dark:text-gray-400 mt-2 font-semibold'>
+            <p className='text-2xl text-gray-600 mt-2 font-semibold'>
               {Math.floor(
                 (new Date().getTime() - new Date('2004-07-22').getTime()) /
                   (1000 * 60 * 60 * 24 * 365.25),
