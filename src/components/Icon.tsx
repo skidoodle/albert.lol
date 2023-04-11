@@ -1,7 +1,8 @@
+import { socials } from '@/components/data/Socials';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import copy from 'copy-to-clipboard';
-import { socials } from '@/components/data/Socials';
+import FadeIn from 'react-fade-in';
 
 type Icon = {
   children: any;
@@ -23,29 +24,35 @@ const notify = () => {
 export const Icon = ({ children, reference, copyValue }: Icon) => {
   if (copyValue) {
     return (
-      <Link
-        href={''}
-        className={`cursor-pointer`}
-        aria-label={
-          socials.find((social) => social.ref === reference)?.ariaLabel
-        }
-        onClick={() => {
-          notify(), copy(reference);
-        }}
-      >
-        {children}
-      </Link>
+      <FadeIn>
+        <Link
+          href={''}
+          className={`cursor-pointer`}
+          aria-label={
+            socials.find((social) => social.ref === reference)?.ariaLabel
+          }
+          onClick={() => {
+            notify(), copy(reference);
+          }}
+        >
+          {children}
+        </Link>
+      </FadeIn>
     );
   }
 
   return (
-    <Link
-      href={reference}
-      target='_blank'
-      className={'cursor-pointer'}
-      aria-label={socials.find((social) => social.ref === reference)?.ariaLabel}
-    >
-      {children}
-    </Link>
+    <FadeIn>
+      <Link
+        href={reference}
+        target='_blank'
+        className={'cursor-pointer'}
+        aria-label={
+          socials.find((social) => social.ref === reference)?.ariaLabel
+        }
+      >
+        {children}
+      </Link>
+    </FadeIn>
   );
 };
