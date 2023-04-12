@@ -5,6 +5,7 @@ export default function Document () {
     <Html lang='en'>
       <Head>
         <link rel='preconnect' href='https://vitals.vercel-insights.com' />
+        <link rel='preload' href='/api/spotify' as='fetch' />
         <meta name='title' content='albert' />
         <meta name='og:title' content='albert' />
         <meta name='description' content='sysadmin' />
