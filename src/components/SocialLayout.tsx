@@ -4,7 +4,7 @@ import React from 'react';
 
 export const SocialLayout = () => {
   return (
-    <div className='grid grid-flow-col w-48 mt-3 text-2xl space-x-8'>
+    <div className='grid grid-flow-col w-48 mt-3 text-2xl space-x-8 pl-1'>
       {socials.map((social) => (
         <Icon
           key={social.id}
