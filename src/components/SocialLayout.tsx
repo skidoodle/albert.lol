@@ -11,7 +11,10 @@ export const SocialLayout = () => {
           reference={social.ref}
           copyValue={social.copyValue}
         >
-          {React.createElement(social.icon)}
+          {React.createElement(social.icon, {
+            className:
+              'fill-current focus:outline-none transition duration-300 ease-in-out hover:text-[#ad87ed]',
+          })}
         </Icon>
       ))}
     </div>

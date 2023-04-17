@@ -5,13 +5,13 @@
 @layer base {
   html {
     scrollbar-width: thin;
-    scrollbar-color: #8a58e0 transparent;
+    scrollbar-color: #8040ee transparent;
   }
 }
 
 @layer components {
   ::selection {
-    background-color: #8039e2;
+    background-color: #8040ee;
     color: #fff;
   }
 
@@ -20,7 +20,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #8a58e0;
+    background-color: #8040ee;
     border-radius: 10px;
   }
 }
