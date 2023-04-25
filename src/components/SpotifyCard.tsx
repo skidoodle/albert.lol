@@ -21,6 +21,8 @@ export const NowPlayingCard = () => {
             height={45}
             width={45}
             alt='Song cover art'
+            placeholder='blur'
+            className='rounded-md'
             src={spotify.song?.image}
           />
         ) : (
