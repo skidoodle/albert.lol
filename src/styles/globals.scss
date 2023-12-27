@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #8040ee transparent;
+  }
+}
+
+@layer components {
+  ::selection {
+    background-color: #8040ee;
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #8040ee;
+    border-radius: 10px;
+  }
+}
+
+:root {
+  --background: #fff;
+  --foreground: #000;
+}
+
+[data-theme='dark'] {
+  --background: #000;
+  --foreground: #fff;
+}
