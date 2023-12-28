@@ -11,6 +11,8 @@ interface SpotifyData {
     title: string
     url: string
     image: string
+    progress: number
+    length: number
   }
 }
 
@@ -29,33 +31,55 @@ export const NowPlayingCard = () => {
     }
   }, [])
 
+  const calcProgress = () => {
+    if (spotify.song && spotify.song.length > 0) {
+      const progressPercentage =
+        (spotify.song.progress / spotify.song.length) * 100
+      return `${progressPercentage}%`
+    }
+    return '0%'
+  }
+
   return (
     <div className='mt-5 flex max-w-sm transform flex-row rounded-md border border-gray-800 p-3 shadow transition duration-300 ease-in-out hover:scale-105 focus:outline-none'>
       {spotify.song ? (
-        <Image
-          height={45}
-          width={45}
-          alt='Song cover art'
-          quality={100}
-          className='select-none rounded-md'
-          draggable={false}
-          src={spotify.song.image}
-        />
+        <>
+          <Image
+            height={45}
+            width={45}
+            alt='Song cover art'
+            quality={100}
+            className='select-none rounded-md'
+            draggable={false}
+            src={spotify.song.image}
+          />
+          <div className='my-auto ml-4'>
+            <div className='text-l sm:text-regular font-semibold'>
+              Listening to{' '}
+              <Link href={`${spotify.song.url}`} target='_blank'>
+                <span className=' text-[#1ED760] hover:text-[#1DB954]'>
+                  {truncate(`${spotify.song.title}`, 20)}
+                </span>
+              </Link>
+            </div>
+            <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex'>
+              <div
+                className='bg-[#1DB954] h-1 rounded-full transition-width duration-300 ease-in-out'
+                style={{ width: calcProgress() }}
+              ></div>
+            </div>
+          </div>
+        </>
       ) : (
-        <HiMusicNote size={45} className='p-2.5' />
+        <>
+          <HiMusicNote size={45} className='p-2.5' />
+          <div className='my-auto ml-4'>
+            <div className='text-l sm:text-regular font-semibold'>
+              Not listening to anything
+            </div>
+          </div>
+        </>
       )}
-      <div className='my-auto ml-4'>
-        <div className='text-l sm:text-regular font-semibold'>
-          Listening to{' '}
-          {spotify.song ? (
-            <Link href={`${spotify.song.url}`} target='_blank'>
-              {truncate(`${spotify.song.title}`, 20)}
-            </Link>
-          ) : (
-            <span>nothing</span>
-          )}
-        </div>
-      </div>
     </div>
   )
 }
