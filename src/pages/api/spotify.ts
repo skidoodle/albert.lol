@@ -34,6 +34,7 @@ export default async function handler(
         url: song.url,
         image: song.album.image,
         progress: song.progress,
+        length: song.length,
       },
     })
   } catch (error) {
