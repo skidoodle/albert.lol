@@ -31,7 +31,7 @@ export const NowPlayingCard = () => {
     }
   }, [])
 
-  const calcProgress = () => {
+  const Progress = () => {
     if (spotify.song && spotify.song.length > 0) {
       const progressPercentage =
         (spotify.song.progress / spotify.song.length) * 100
@@ -55,17 +55,22 @@ export const NowPlayingCard = () => {
           />
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
-              Listening to{' '}
               <Link href={`${spotify.song.url}`} target='_blank'>
-                <span className=' text-[#1ED760] hover:text-[#1DB954]'>
+                <h1 className='text-[#1ED760] hover:text-[#1DB954]'>
                   {truncate(`${spotify.song.title}`, 20)}
-                </span>
+                </h1>
               </Link>
+              <h2 className='text-xs'>
+                {truncate(
+                  spotify.song.artist.map((artist) => artist).join(', '),
+                  30
+                )}
+              </h2>
             </div>
-            <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex'>
+            <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex w-44'>
               <div
                 className='bg-[#1DB954] h-1 rounded-full transition-width duration-300 ease-in-out'
-                style={{ width: calcProgress() }}
+                style={{ width: Progress() }}
               ></div>
             </div>
           </div>
