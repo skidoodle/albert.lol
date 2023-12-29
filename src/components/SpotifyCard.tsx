@@ -57,7 +57,7 @@ export const NowPlayingCard = () => {
             <div className='text-l sm:text-regular font-semibold'>
               <Link href={`${spotify.song.url}`} target='_blank'>
                 <h1 className='text-[#1ED760] hover:text-[#1DB954]'>
-                  {truncate(`${spotify.song.title}`, 20)}
+                  {truncate(`${spotify.song.title}`, 30)}
                 </h1>
               </Link>
               <h2 className='text-xs'>
