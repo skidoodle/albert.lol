@@ -4,7 +4,17 @@ import { useEffect, useState } from 'react'
 import io from 'socket.io-client'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { SpotifyData } from '@/utils/interface'
+
+interface SpotifyData {
+  song?: {
+    artist: string[]
+    title: string
+    url: string
+    image: string
+    progress: number
+    length: number
+  }
+}
 
 export const NowPlayingCard = () => {
   const [spotify, setSpotify] = useState<SpotifyData>({})
@@ -20,6 +30,15 @@ export const NowPlayingCard = () => {
       socket.disconnect()
     }
   }, [])
+
+  const Progress = () => {
+    if (spotify.song && spotify.song.length > 0) {
+      const progressPercentage =
+        (spotify.song.progress / spotify.song.length) * 100
+      return `${progressPercentage}%`
+    }
+    return '0%'
+  }
 
   return (
     <div className='mt-5 flex max-w-sm transform flex-row rounded-md border border-gray-800 p-3 shadow transition duration-300 ease-in-out hover:scale-105 focus:outline-none'>
@@ -51,10 +70,7 @@ export const NowPlayingCard = () => {
             <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex w-44'>
               <div
                 className='bg-[#1DB954] h-1 rounded-full transition-width duration-300 ease-in-out'
-                style={{
-                  width:
-                    (spotify.song.progress / spotify.song.duration) * 100 + '%',
-                }}
+                style={{ width: Progress() }}
               ></div>
             </div>
           </div>

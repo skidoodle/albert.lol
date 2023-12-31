@@ -21,26 +21,21 @@ export default async function handler(
 ) {
   try {
     const song = await spotify.getCurrentSong()
-    if (!song.is_playing) {
+    if (!song || !song.isPlaying) {
       return res.status(200).json({
-        is_playing: false,
+        nowplaying: false,
       })
     }
     res.status(200).json({
-      is_playing: true,
-      name: song.name,
-      album: {
-        name: song.album.name,
+      nowplaying: true,
+      song: {
+        artist: song.artists.name,
+        title: song.title,
+        url: song.url,
         image: song.album.image,
-        release: song.album.release_date,
+        progress: song.progress,
+        length: song.length,
       },
-      artists: {
-        name: song.artists.name,
-        url: song.artists.url,
-      },
-      url: song.url,
-      progress: song.progress,
-      duration: song.duration,
     })
   } catch (error) {
     res

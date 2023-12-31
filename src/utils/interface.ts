@@ -3,7 +3,7 @@ interface Album {
   images: {
     url: string
   }[]
-  release_date: string
+  release: string[]
 }
 
 export interface Artist {
@@ -17,15 +17,4 @@ export interface Item {
   artists: Artist[]
   external_urls: { spotify: string }
   duration_ms: number
-}
-
-export interface SpotifyData {
-  song?: {
-    title: string
-    artist: string[]
-    url: string
-    image: string
-    progress: number
-    duration: number
-  }
 }

@@ -1,16 +1,16 @@
 export type SongResult = {
-  is_playing: boolean
-  name: string
+  progress: number
   album: {
     name: string
     image?: string
-    release_date: string
+    release: string[]
   }
   artists: {
     name: string[]
     url: string[]
   }
   url: string
-  progress: number
-  duration: number
+  title: string
+  length: number
+  isPlaying: boolean
 }

@@ -10,20 +10,20 @@ export class SongResultMap {
     const { item } = result
 
     return {
-      name: item.name,
+      progress: result.progress_ms,
+      title: item.name,
       album: {
         name: item.album.name,
         image: item.album.images[0]?.url,
-        release_date: item.album.release_date,
+        release: item.album.release,
       },
       artists: {
         name: item.artists.map((x: Artist) => x.name),
         url: item.artists.map((x: Artist) => x.external_urls.spotify),
       },
       url: item.external_urls.spotify,
-      progress: result.progress_ms,
-      duration: item.duration_ms,
-      is_playing: result.is_playing,
+      length: item.duration_ms,
+      isPlaying: result.is_playing,
     }
   }
 }
