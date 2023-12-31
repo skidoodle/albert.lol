@@ -3,7 +3,7 @@ interface Album {
   images: {
     url: string
   }[]
-  release: string[]
+  release_date: string
 }
 
 export interface Artist {

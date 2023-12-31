@@ -3,7 +3,7 @@ export type SongResult = {
   album: {
     name: string
     image?: string
-    release: string[]
+    release_date: string
   }
   artists: {
     name: string[]

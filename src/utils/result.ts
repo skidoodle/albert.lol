@@ -15,7 +15,7 @@ export class SongResultMap {
       album: {
         name: item.album.name,
         image: item.album.images[0]?.url,
-        release: item.album.release,
+        release_date: item.album.release_date,
       },
       artists: {
         name: item.artists.map((x: Artist) => x.name),

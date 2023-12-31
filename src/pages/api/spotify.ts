@@ -31,7 +31,7 @@ export default async function handler(
       album: {
         name: song.album.name,
         image: song.album.image,
-        release: song.album.release,
+        release_date: song.album.release_date,
       },
       artists: {
         name: song.artists.name,
