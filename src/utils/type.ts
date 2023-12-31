@@ -11,6 +11,6 @@ export type SongResult = {
   }
   url: string
   title: string
-  length: number
-  isPlaying: boolean
+  duration: number
+  is_playing: boolean
 }
