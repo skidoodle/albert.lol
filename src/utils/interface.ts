@@ -18,3 +18,17 @@ export interface Item {
   external_urls: { spotify: string }
   duration_ms: number
 }
+
+export interface SpotifyData {
+  is_playing?: boolean
+  title: string
+  artists: { name: string[] }
+  album: { image: string }
+  url: string
+  progress: number
+  duration: number
+}
+
+export interface ErrorProps {
+  statusCode?: number
+}

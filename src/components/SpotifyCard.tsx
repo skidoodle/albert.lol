@@ -1,19 +1,10 @@
+import type { SpotifyData } from '@/utils/interface'
 import { HiMusicNote } from 'react-icons/hi'
 import { truncate } from '@/utils/truncate'
 import { useEffect, useState } from 'react'
 import io from 'socket.io-client'
 import Image from 'next/image'
 import Link from 'next/link'
-
-interface SpotifyData {
-  is_playing?: boolean
-  title: string
-  artists: { name: string[] }
-  album: { image: string }
-  url: string
-  progress: number
-  duration: number
-}
 
 export const NowPlayingCard = () => {
   const [spotify, setSpotify] = useState<SpotifyData>()
@@ -35,8 +26,8 @@ export const NowPlayingCard = () => {
       {spotify?.is_playing ? (
         <>
           <Image
-            height={45}
-            width={45}
+            width={60}
+            height={60}
             alt='Song cover art'
             quality={100}
             className='select-none rounded-md'
@@ -69,7 +60,7 @@ export const NowPlayingCard = () => {
         </>
       ) : (
         <>
-          <HiMusicNote size={45} className='p-2.5' />
+          <HiMusicNote size={60} className='p-2.5' />
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
               Not listening to anything
