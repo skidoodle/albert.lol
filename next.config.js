@@ -48,10 +48,6 @@ module.exports = {
         protocol: 'https',
         hostname: 'i.scdn.co',
       },
-      {
-        protocol: 'https',
-        hostname: 'cdn.albert.lol',
-      },
     ],
   },
   reactStrictMode: true,

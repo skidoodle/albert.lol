@@ -16,16 +16,13 @@ export default function Document() {
         />
         <meta
           name='description'
-          content={`${age()}-year-old sysadmin from hungary`}
+          content={`${age()}-year-old devops engineer`}
         />
         <meta
           name='og:description'
-          content={`${age()}-year-old sysadmin from hungary`}
+          content={`${age()}-year-old devops engineer`}
         />
-        <meta
-          property='og:image'
-          content='https://cdn.albert.lol/KmxuVVvWGUtGa.webp'
-        />
+        <meta property='og:image' content='/profile.webp' />
       </Head>
       <body>
         <Main />
