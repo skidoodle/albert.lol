@@ -14,14 +14,8 @@ export default function Document() {
           href='https://vitals.vercel-insights.com'
           crossOrigin='anonymous'
         />
-        <meta
-          name='description'
-          content={`${age()}-year-old devops engineer`}
-        />
-        <meta
-          name='og:description'
-          content={`${age()}-year-old devops engineer`}
-        />
+        <meta name='description' content={`${age()}yo devops engineer`} />
+        <meta name='og:description' content={`${age()}yo devops engineer`} />
         <meta property='og:image' content='/profile.webp' />
       </Head>
       <body>

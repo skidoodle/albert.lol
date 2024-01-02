@@ -14,7 +14,7 @@ export default function Home() {
           <div className='mx-auto mb-16 mt-32 flex max-w-3xl flex-col'>
             <h1 className='text-7xl font-bold'>albert</h1>
             <p className='mt-2 text-2xl font-semibold text-gray-600'>
-              {age()}-year-old devops engineer
+              {age()}yo devops engineer
             </p>
             <SocialLayout />
             <NowPlayingCard />
