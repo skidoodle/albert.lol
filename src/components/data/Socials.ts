@@ -10,7 +10,7 @@ type Socials = {
   ariaLabel?: string
 }
 
-export const socials: Array<Socials> = [
+export const Socials: Array<Socials> = [
   {
     id: 1,
     ref: 'https://github.com/skidoodle',

@@ -1,35 +1,33 @@
-import { BsSunFill, BsMoonFill } from 'react-icons/bs'
-import { useEffect, useState } from 'react'
+import { VscColorMode } from 'react-icons/vsc'
 import { useTheme } from 'next-themes'
 
 export const ThemeSwitcher = () => {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
   const toggle = () => {
-    if (theme === 'dark') {
-      setTheme('light')
-    } else {
-      setTheme('dark')
+    switch (theme) {
+      case 'dark':
+        setTheme('light')
+        break
+      case 'light':
+        setTheme('dark')
+        break
+      default:
+        setTheme('dark')
+        break
     }
   }
-
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
 
   return (
     <button
       aria-label='Switch Theme'
       type='button'
-      className='ml-auto mr-5 mt-5 flex'
+      className={`ml-auto mr-5 mt-5 flex transition duration-300 ease-in-out ${
+        theme === 'light' ? 'hover:bg-gray-300' : 'dark:hover:bg-gray-700'
+      } p-2 rounded-full`}
       onClick={() => toggle()}
     >
-      {theme === 'light' ? (
-        <BsMoonFill style={{ fill: 'black' }} size={25} />
-      ) : (
-        <BsSunFill size={25} />
-      )}
+      <VscColorMode size={30} />
     </button>
   )
 }

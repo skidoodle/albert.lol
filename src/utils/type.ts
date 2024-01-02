@@ -14,3 +14,9 @@ export type SongResult = {
   duration: number
   is_playing: boolean
 }
+
+export type Icon = {
+  children: React.ReactNode
+  reference: string
+  copyValue?: boolean
+}

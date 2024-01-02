@@ -12,8 +12,8 @@ export default function Home() {
       <FadeIn>
         <div className='ml-[10%] mr-[10%]'>
           <div className='mx-auto mb-16 mt-32 flex max-w-3xl flex-col'>
-            <h1 className='text-7xl font-bold'>albert</h1>
-            <p className='mt-2 text-2xl font-semibold text-gray-600'>
+            <h1 className='text-[5rem] leading-none font-bold'>albert</h1>
+            <p className='mt-2 text-[1.6rem] leading-none font-semibold text-slate-600'>
               {age()}yo devops engineer
             </p>
             <SocialLayout />

@@ -48,7 +48,7 @@ export const NowPlayingCard = () => {
                 )}
               </h2>
             </div>
-            <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex w-44'>
+            <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex w-48'>
               <div
                 className='bg-[#1DB954] h-1 rounded-full transition-width duration-300 ease-in-out'
                 style={{
@@ -60,7 +60,7 @@ export const NowPlayingCard = () => {
         </>
       ) : (
         <>
-          <HiMusicNote size={60} className='p-2.5' />
+          <HiMusicNote size={60} className='pl-1 p-2.5' />
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
               Not listening to anything

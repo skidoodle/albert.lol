@@ -1,4 +1,4 @@
-import { socials } from '@/components/data/Socials'
+import { Socials } from '@/components/data/Socials'
 import copy from 'copy-to-clipboard'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
@@ -27,7 +27,7 @@ export const Icon = ({ children, reference, copyValue }: Icon) => {
         href={''}
         className={`cursor-pointer`}
         aria-label={
-          socials.find((social) => social.ref === reference)?.ariaLabel
+          Socials.find((social) => social.ref === reference)?.ariaLabel
         }
         onClick={() => {
           notify(), copy(reference)
@@ -43,7 +43,7 @@ export const Icon = ({ children, reference, copyValue }: Icon) => {
       href={reference}
       target='_blank'
       className={'cursor-pointer'}
-      aria-label={socials.find((social) => social.ref === reference)?.ariaLabel}
+      aria-label={Socials.find((social) => social.ref === reference)?.ariaLabel}
     >
       {children}
     </Link>
