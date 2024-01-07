@@ -13,7 +13,7 @@ export const SocialLayout = () => {
         >
           {React.createElement(social.icon, {
             className:
-              'fill-current focus:outline-none transition duration-300 ease-in-out hover:text-[#ad87ed]',
+              'fill-current focus:outline-none transition duration-300 ease-in-out hover:text-[#ad87ed] hover:scale-105',
           })}
         </Icon>
       ))}
