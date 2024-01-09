@@ -4,7 +4,7 @@
   "author": "albert|skidoodle@gh",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,8 +12,9 @@
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.2",
-    "axios": "^1.6.2",
+    "axios": "^1.6.5",
     "copy-to-clipboard": "^3.3.3",
+    "million": "^2.6.4",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
@@ -21,24 +22,24 @@
     "react-fade-in": "^2.0.1",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
-    "sass": "^1.69.5",
-    "socket.io-client": "^4.7.2"
+    "sass": "^1.69.7",
+    "socket.io-client": "^4.7.3"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",
-    "@types/eslint": "^8.44.8",
-    "@types/node": "20.10.4",
-    "@types/react": "18.2.42",
-    "@types/react-dom": "18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
+    "@types/eslint": "^8.56.1",
+    "@types/node": "20.10.8",
+    "@types/react": "18.2.47",
+    "@types/react-dom": "18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
     "autoprefixer": "10.4.16",
-    "eslint": "8.55.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
-    "postcss": "8.4.32",
+    "postcss": "8.4.33",
     "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.9",
-    "tailwindcss": "3.3.6",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "3.4.1",
     "typescript": "5.3.3"
   }
 }
