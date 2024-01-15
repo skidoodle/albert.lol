@@ -5,26 +5,16 @@ export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme()
 
   const toggle = () => {
-    switch (theme) {
-      case 'dark':
-        setTheme('light')
-        break
-      case 'light':
-        setTheme('dark')
-        break
-      default:
-        setTheme('dark')
-        break
-    }
+    setTheme(theme === 'light' ? 'dark' : 'light')
   }
 
   return (
     <button
       aria-label='Switch Theme'
       type='button'
-      className={`ml-auto mr-5 mt-5 flex transition duration-300 ease-in-out ${
+      className={`ml-auto mr-5 mt-5 flex transition-colors duration-300 ease-in-out p-2 rounded-full ${
         theme === 'light' ? 'hover:bg-gray-300' : 'dark:hover:bg-gray-700'
-      } p-2 rounded-full`}
+      }`}
       onClick={() => toggle()}
     >
       <VscColorMode size={30} />
