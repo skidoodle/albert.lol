@@ -21,7 +21,7 @@ export default async function handler(
 ) {
   try {
     const song = await spotify.getCurrentSong()
-    if (!song.is_playing || !song) {
+    if (!song || !song.is_playing) {
       return res.status(200).json({
         is_playing: false,
       })
