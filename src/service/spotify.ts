@@ -42,7 +42,7 @@ export class SpotifyService {
     }
   }
 
-  public async getCurrentSong(): Promise<SongResult> {
+  public async getCurrentSong(): Promise<SongResult | undefined> {
     try {
       if (!this.hasAccessToken()) {
         await this.getAccessToken()
@@ -61,9 +61,8 @@ export class SpotifyService {
       })
 
       return SongResultMap.parseSong(response.data)
-    } catch (error) {
+    } catch {
       await this.getAccessToken()
-      throw error
     }
   }
 }

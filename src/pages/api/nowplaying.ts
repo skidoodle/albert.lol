@@ -21,11 +21,13 @@ export default async function handler(
 ) {
   try {
     const song = await spotify.getCurrentSong()
+
     if (!song || !song.is_playing) {
       return res.status(200).json({
         is_playing: false,
       })
     }
+
     res.status(200).json({
       is_playing: true,
       album: {
@@ -43,8 +45,8 @@ export default async function handler(
       duration: song.duration,
     })
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: 'An error occurred while fetching the song.' })
+    res.status(500).json({
+      error: 'An error occurred while fetching the song.',
+    })
   }
 }
