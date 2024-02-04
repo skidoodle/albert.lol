@@ -1,4 +1,4 @@
-import type { SpotifyData } from '@/utils/interface'
+import type { SpotifyData } from '@/utils/types'
 import { HiMusicNote } from 'react-icons/hi'
 import { truncate } from '@/utils/truncate'
 import { useEffect, useState } from 'react'
@@ -26,8 +26,8 @@ export const NowPlayingCard = () => {
       {spotify?.is_playing ? (
         <>
           <Image
-            width={60}
-            height={60}
+            width={50}
+            height={50}
             alt='Song cover art'
             quality={100}
             className='select-none rounded-md'
@@ -60,7 +60,7 @@ export const NowPlayingCard = () => {
         </>
       ) : (
         <>
-          <HiMusicNote size={60} className='pl-1 p-2.5' />
+          <HiMusicNote size={50} className='pl-1 p-2.5' />
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
               Not listening to anything

@@ -2,12 +2,7 @@ import { Socials } from '@/components/data/Socials'
 import copy from 'copy-to-clipboard'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
-
-type Icon = {
-  children: React.ReactNode
-  reference: string
-  copyValue?: boolean
-}
+import type { IconType } from '@/utils/types'
 
 const notify = () => {
   toast.remove(),
@@ -20,7 +15,7 @@ const notify = () => {
     })
 }
 
-export const Icon = ({ children, reference, copyValue }: Icon) => {
+export const Icon = ({ children, reference, copyValue }: IconType) => {
   if (copyValue) {
     return (
       <Link

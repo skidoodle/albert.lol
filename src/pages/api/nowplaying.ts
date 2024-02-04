@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { SpotifyService } from '@/service/spotify'
+import { SpotifyService } from '@/utils/spotify'
 
 function getEnvVar(key: string): string {
   const value = process.env[key]
@@ -9,9 +9,11 @@ function getEnvVar(key: string): string {
   return value
 }
 
-const CLIENT_ID = getEnvVar('CLIENT_ID')
-const CLIENT_SECRET = getEnvVar('CLIENT_SECRET')
-const REFRESH_TOKEN = getEnvVar('REFRESH_TOKEN')
+const { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN } = {
+  CLIENT_ID: getEnvVar('CLIENT_ID'),
+  CLIENT_SECRET: getEnvVar('CLIENT_SECRET'),
+  REFRESH_TOKEN: getEnvVar('REFRESH_TOKEN'),
+}
 
 const spotify = new SpotifyService(CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN)
 
@@ -22,7 +24,7 @@ export default async function handler(
   try {
     const song = await spotify.getCurrentSong()
 
-    if (!song || !song.is_playing) {
+    if (!song) {
       return res.status(200).json({
         is_playing: false,
       })

@@ -1,6 +1,5 @@
 import { SongResultMap } from '@/utils/result'
-import type { SongResult } from '@/utils/type'
-import type { Item } from '@/utils/interface'
+import type { SongResult, Item } from '@/utils/types'
 import axios, { type AxiosResponse } from 'axios'
 
 export class SpotifyService {
