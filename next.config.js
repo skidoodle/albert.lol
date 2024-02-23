@@ -1,4 +1,4 @@
-import million from 'million/compiler'
+// @ts-check
 
 const securityHeaders = [
   {
@@ -57,8 +57,4 @@ const nextConfig = {
   swcMinify: true,
 }
 
-const millionConfig = {
-  auto: true,
-}
-
-export default million.next(nextConfig, millionConfig)
+module.exports = nextConfig
