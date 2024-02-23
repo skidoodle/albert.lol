@@ -1,7 +1,7 @@
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import FadeIn from 'react-fade-in'
 import Link from 'next/link'
-import type { ErrorProps } from '@/utils/interface'
+import type { ErrorProps } from '@/utils/types'
 import type { GetServerSideProps, GetServerSidePropsContext } from 'next'
 
 const ErrorPage: React.FC<ErrorProps> = ({ statusCode }) => {

@@ -1,5 +1,4 @@
-import type { SongResult } from '@/utils/type'
-import type { Artist, Item } from '@/utils/interface'
+import type { SongResult, Artist, Item } from '@/utils/types'
 
 export class SongResultMap {
   public static parseSong(result: {
