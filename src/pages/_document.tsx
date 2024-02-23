@@ -9,6 +9,11 @@ export default function Document() {
         <meta name='title' content='albert' />
         <meta name='og:title' content='albert' />
         <meta property='og:url' content='https://albert.lol' />
+        <script
+          defer
+          data-domain='analytics.albert.lol'
+          src='https://analytics.albert.lol/js/script.js'
+        />
         <link
           rel='preconnect'
           href='https://vitals.vercel-insights.com'
