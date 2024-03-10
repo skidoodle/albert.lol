@@ -1,6 +1,6 @@
+import axios, { type AxiosResponse } from 'axios'
 import { SongResultMap } from '@/utils/result'
 import type { SongResult, Item } from '@/utils/types'
-import axios, { type AxiosResponse } from 'axios'
 
 export class SpotifyService {
   private accessToken: string | undefined
@@ -22,18 +22,17 @@ export class SpotifyService {
     this.accessToken = token
   }
 
-  private async getAccessToken(): Promise<void> {
+  private async refreshAccessToken(): Promise<void> {
     try {
-      const response: AxiosResponse<{ access_token: string }> = await axios({
-        url: 'https://accounts.spotify.com/api/token',
-        method: 'POST',
-        params: {
-          client_id: this.clientId,
-          client_secret: this.clientSecret,
-          refresh_token: this.refreshToken,
-          grant_type: 'refresh_token',
-        },
-      })
+      const response: AxiosResponse<{ access_token: string }> =
+        await axios.post('https://accounts.spotify.com/api/token', null, {
+          params: {
+            client_id: this.clientId,
+            client_secret: this.clientSecret,
+            refresh_token: this.refreshToken,
+            grant_type: 'refresh_token',
+          },
+        })
 
       this.setAccessToken(response.data.access_token)
     } catch (error) {
@@ -44,24 +43,25 @@ export class SpotifyService {
   public async getCurrentSong(): Promise<SongResult | undefined> {
     try {
       if (!this.hasAccessToken()) {
-        await this.getAccessToken()
+        await this.refreshAccessToken()
       }
 
       const response: AxiosResponse<{
         progress_ms: number
         item: Item
         is_playing: boolean
-      }> = await axios({
-        url: 'https://api.spotify.com/v1/me/player/currently-playing',
-        method: 'GET',
-        headers: {
-          Authorization: 'Bearer ' + this.accessToken,
-        },
-      })
+      }> = await axios.get(
+        'https://api.spotify.com/v1/me/player/currently-playing',
+        {
+          headers: {
+            Authorization: 'Bearer ' + this.accessToken,
+          },
+        }
+      )
 
       return SongResultMap.parseSong(response.data)
-    } catch {
-      await this.getAccessToken()
+    } catch (error) {
+      await this.refreshAccessToken()
     }
   }
 }
