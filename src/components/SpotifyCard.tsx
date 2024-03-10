@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const NowPlayingCard = () => {
-  const [spotify, setSpotify] = useState<SpotifyData>()
+  const [spotify, setSpotify] = useState<SpotifyData | undefined>()
 
   useEffect(() => {
     const socket = io('wss://ws.albert.lol')
@@ -36,23 +36,20 @@ export const NowPlayingCard = () => {
           />
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
-              <Link href={`${spotify.url}`} target='_blank'>
+              <Link href={spotify.url} target='_blank'>
                 <h1 className='text-[#1ED760] hover:text-[#1DB954]'>
-                  {truncate(`${spotify.title}`, 30)}
+                  {truncate(spotify.title, 30)}
                 </h1>
               </Link>
               <h2 className='text-xs'>
-                {truncate(
-                  spotify.artists?.name.map((artist) => artist).join(', '),
-                  30
-                )}
+                {truncate(spotify.artists?.name.join(', '), 30)}
               </h2>
             </div>
             <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex w-48'>
               <div
                 className='bg-[#1DB954] h-1 rounded-full transition-width duration-300 ease-in-out'
                 style={{
-                  width: (spotify.progress / spotify.duration) * 100 + '%',
+                  width: `${(spotify.progress / spotify.duration) * 100}%`,
                 }}
               ></div>
             </div>
