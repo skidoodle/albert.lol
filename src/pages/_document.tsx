@@ -1,14 +1,25 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import age from '@/utils/age'
 
+const metadata = {
+  title: 'albert',
+  description: `${age()}yo devops engineer`,
+  image: '/profile.webp',
+  url: 'https://albert.lol',
+  theme: '#121212',
+}
+
 export default function Document() {
   return (
-    <Html lang='zxx'>
+    <Html lang='en'>
       <Head>
-        <meta name='theme-color' content='#121212' />
-        <meta name='title' content='albert' />
-        <meta name='og:title' content='albert' />
-        <meta property='og:url' content='https://albert.lol' />
+        <meta name='theme-color' content={metadata.theme} />
+        <meta name='title' content={metadata.title} />
+        <meta name='og:title' content={metadata.title} />
+        <meta property='og:url' content={metadata.url} />
+        <meta name='description' content={metadata.description} />
+        <meta name='og:description' content={metadata.description} />
+        <meta property='og:image' content={metadata.image} />
         <script
           defer
           data-domain='analytics.albert.lol'
@@ -19,9 +30,6 @@ export default function Document() {
           href='https://vitals.vercel-insights.com'
           crossOrigin='anonymous'
         />
-        <meta name='description' content={`${age()}yo devops engineer`} />
-        <meta name='og:description' content={`${age()}yo devops engineer`} />
-        <meta property='og:image' content='/profile.webp' />
       </Head>
       <body>
         <Main />
