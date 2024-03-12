@@ -12,8 +12,9 @@ export const NowPlayingCard = () => {
   useEffect(() => {
     const socket = io('wss://ws.albert.lol')
 
-    socket.on('nowPlayingData', (data) => {
-      setSpotify(data as SpotifyData)
+    socket.on('nowPlayingData', (data: string) => {
+      const parsedData = JSON.parse(data) as SpotifyData
+      setSpotify(parsedData)
     })
 
     return () => {
