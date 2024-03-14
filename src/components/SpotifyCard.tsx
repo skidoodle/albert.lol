@@ -10,7 +10,10 @@ export const NowPlayingCard = () => {
   const [spotify, setSpotify] = useState<SpotifyData | undefined>()
 
   useEffect(() => {
-    const socket = io('wss://ws.albert.lol')
+    const socket = io('wss://ws.albert.lol', {
+      transports: ['websocket'],
+      path: '/',
+    })
 
     socket.on('nowPlayingData', (data: string) => {
       const parsedData = JSON.parse(data) as SpotifyData
