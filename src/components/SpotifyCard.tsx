@@ -11,7 +11,6 @@ export const NowPlayingCard = () => {
 
   useEffect(() => {
     const socket = io('wss://ws.albert.lol', {
-      transports: ['websocket'],
       path: '/',
     })
 
