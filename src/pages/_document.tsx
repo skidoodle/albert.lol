@@ -22,7 +22,7 @@ export default function Document() {
         <meta property='og:image' content={metadata.image} />
         <script
           defer
-          data-domain='analytics.albert.lol'
+          data-domain='albert.lol'
           src='https://analytics.albert.lol/js/script.js'
         />
         <link
