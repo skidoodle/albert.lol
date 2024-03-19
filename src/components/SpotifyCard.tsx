@@ -35,17 +35,22 @@ export const NowPlayingCard = () => {
             quality={100}
             className='select-none rounded-md'
             draggable={false}
-            src={spotify.album.image}
+            src={spotify.album.image ?? 'https://placehold.co/50x50.webp'}
           />
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
-              <Link href={spotify.url} target='_blank'>
+              <Link
+                href={spotify.url ?? '/'}
+                target={spotify.url ? '_blank' : '_self'}
+              >
                 <h1 className='text-[#1ED760] hover:text-[#1DB954]'>
                   {truncate(spotify.title, 30)}
                 </h1>
               </Link>
               <h2 className='text-xs'>
-                {truncate(spotify.artists?.name.join(', '), 30)}
+                {spotify.artists?.name?.some((artist) => artist.trim())
+                  ? truncate(spotify.artists.name.join(', '), 30)
+                  : 'Unknown artist'}
               </h2>
             </div>
             <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700 bg-fixed flex w-48'>
