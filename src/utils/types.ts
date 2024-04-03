@@ -13,7 +13,3 @@ export interface SpotifyData {
   progress: number
   duration: number
 }
-
-export interface ErrorProps {
-  statusCode?: number
-}
