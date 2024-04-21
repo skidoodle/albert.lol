@@ -10,9 +10,7 @@ export const NowPlayingCard = () => {
   const [spotify, setSpotify] = useState<SpotifyData | undefined>()
 
   useEffect(() => {
-    const socket = io('wss://ws.albert.lol', {
-      path: '/',
-    })
+    const socket = io('wss://ws.albert.lol')
 
     socket.on('nowPlayingData', (data: string) => {
       const parsedData = JSON.parse(data) as SpotifyData
@@ -29,11 +27,12 @@ export const NowPlayingCard = () => {
       {spotify?.is_playing ? (
         <>
           <Image
+            priority={true}
             width={50}
             height={50}
             alt='Song cover art'
             quality={100}
-            className='select-none rounded-md'
+            className='select-none rounded-md w-auto h-auto'
             draggable={false}
             src={spotify.album.image ?? 'https://placehold.co/50x50.webp'}
           />
