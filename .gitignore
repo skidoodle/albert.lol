@@ -43,4 +43,3 @@ next-env.d.ts
 # package manager
 .pnpm-lock.yaml
 yarn.lock
-bun.lockb
