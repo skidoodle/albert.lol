@@ -39,3 +39,8 @@ next-env.d.ts
 
 # turbo
 .turbo
+
+# package manager
+.pnpm-lock.yaml
+yarn.lock
+bun.lockb
