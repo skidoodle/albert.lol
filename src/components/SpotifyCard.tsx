@@ -26,16 +26,18 @@ export const NowPlayingCard = () => {
     <div className='mt-5 flex max-w-sm transform flex-row rounded-md border border-gray-800 p-3 shadow transition duration-300 ease-in-out hover:scale-105 focus:outline-none'>
       {spotify?.is_playing ? (
         <>
-          <Image
-            priority={true}
-            width={50}
-            height={50}
-            alt='Song cover art'
-            quality={100}
-            className='select-none rounded-md w-auto h-auto'
-            draggable={false}
-            src={spotify.album.image ?? 'https://placehold.co/50x50.webp'}
-          />
+          <div className='w-[50px] h-[50px] rounded-md bg-gray-800 dark:bg-gray-200'>
+            <Image
+              priority={true}
+              width={50}
+              height={50}
+              alt='Song cover art'
+              quality={100}
+              className='select-none rounded-md w-auto h-auto'
+              draggable={false}
+              src={spotify.album.image ?? 'https://placehold.co/50x50.webp'}
+            />
+          </div>
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
               <Link
