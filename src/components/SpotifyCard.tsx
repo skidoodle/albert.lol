@@ -10,11 +10,6 @@ export const NowPlayingCard = () => {
 
   useEffect(() => {
     const socket = new WebSocket('wss://ws.albert.lol');
-
-    socket.onopen = () => {
-      console.log('WebSocket connected');
-    };
-
     socket.onmessage = (e) => {
       try {
         const data = JSON.parse(e.data);
@@ -22,18 +17,6 @@ export const NowPlayingCard = () => {
       } catch (error) {
         console.error('Error parsing WebSocket message:', error);
       }
-    };
-
-    socket.onclose = () => {
-      console.log('WebSocket closed');
-    };
-
-    socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
-
-    return () => {
-      socket.close();
     };
   }, []);
 
@@ -64,8 +47,8 @@ export const NowPlayingCard = () => {
                 </h1>
               </Link>
               <h2 className='text-xs'>
-                {spotify.item.artists?.name?.some((artist) => artist.trim())
-                  ? truncate(spotify.item.artists.name.join(', '), 30)
+                {spotify.item.artists?.length > 0
+                  ? truncate(spotify.item.artists.map(artist => artist.name).join(', '), 30)
                   : 'Unknown artist'}
               </h2>
             </div>

@@ -8,7 +8,9 @@ export interface SpotifyData {
   is_playing?: boolean
   progress_ms: number
   item: {
-    artists: { name: string[] }
+    artists: {
+      name: string
+    }[]
     album: {
       images: {
         url: string
