@@ -6,10 +6,16 @@ export type IconType = {
 
 export interface SpotifyData {
   is_playing?: boolean
-  title: string
-  artists: { name: string[] }
-  album: { image: string }
+  progress_ms: number
+  item: {
+    artists: { name: string[] }
+    album: {
+      images: {
+        url: string
+      }[]
+    }
+  name: string
   url: string
-  progress: number
-  duration: number
+  duration_ms: number
+  }
 }
