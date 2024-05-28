@@ -15,6 +15,9 @@ export interface SpotifyData {
       images: {
         url: string
       }[]
+    },
+    external_urls: {
+      spotify: string
     }
   name: string
   url: string

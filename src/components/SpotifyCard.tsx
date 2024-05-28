@@ -39,8 +39,8 @@ export const NowPlayingCard = () => {
           <div className='my-auto ml-4'>
             <div className='text-l sm:text-regular font-semibold'>
               <Link
-                href={spotify.item.url ?? '/'}
-                target={spotify.item.url ? '_blank' : '_self'}
+                href={spotify.item.external_urls.spotify ?? '/'}
+                target='_blank'
               >
                 <h1 className='text-[#1ED760] hover:text-[#1DB954]'>
                   {truncate(spotify.item.name, 30)}
