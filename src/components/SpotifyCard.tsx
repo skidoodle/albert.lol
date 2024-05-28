@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react'
 import type { SpotifyData } from '@/utils/types'
 import { HiMusicNote } from 'react-icons/hi'
 import { truncate } from '@/utils/truncate'
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,13 +10,21 @@ export const NowPlayingCard = () => {
 
   useEffect(() => {
     const socket = new WebSocket('wss://ws.albert.lol');
-    socket.onmessage = (e) => {
+
+    const handleMessage = (e: MessageEvent) => {
       try {
         const data = JSON.parse(e.data);
-        setSpotify(data)
+        setSpotify(data);
       } catch (error) {
         console.error('Error parsing WebSocket message:', error);
       }
+    };
+
+    socket.addEventListener('message', handleMessage);
+
+    return () => {
+      socket.removeEventListener('message', handleMessage);
+      socket.close();
     };
   }, []);
 
