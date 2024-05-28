@@ -6,6 +6,12 @@
   html {
     scrollbar-width: thin;
     scrollbar-color: #8040ee transparent;
+    color: #000;
+    background: #fff;
+  }
+  [data-theme='dark'] {
+    color: #fff;
+    background: #000;
   }
 }
 

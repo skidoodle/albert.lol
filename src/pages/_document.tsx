@@ -6,14 +6,12 @@ const metadata = {
   description: `${age()}yo devops engineer`,
   image: '/profile.webp',
   url: 'https://albert.lol',
-  theme: '#121212',
 }
 
 export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <meta name='theme-color' content={metadata.theme} />
         <meta name='title' content={metadata.title} />
         <meta name='og:title' content={metadata.title} />
         <meta property='og:url' content={metadata.url} />
