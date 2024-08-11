@@ -2,6 +2,7 @@ export type IconType = {
   children: React.ReactNode
   reference: string
   copyValue?: boolean
+  ariaLabel: string
 }
 
 export interface SpotifyData {
@@ -15,12 +16,12 @@ export interface SpotifyData {
       images: {
         url: string
       }[]
-    },
+    }
     external_urls: {
       spotify: string
     }
-  name: string
-  url: string
-  duration_ms: number
+    name: string
+    url: string
+    duration_ms: number
   }
 }

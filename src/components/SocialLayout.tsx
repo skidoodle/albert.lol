@@ -1,22 +1,23 @@
 import { Socials } from '@/components/data/Socials'
 import { Icon } from '@/components/Icon'
-import React from 'react'
+import React, { memo } from 'react'
 
-export const SocialLayout = () => {
+export const SocialLayout = memo(() => {
   return (
-    <div className='mt-3 grid w-fit grid-flow-col space-x-8 pl-1 text-[1.7rem] leading-none'>
-      {Socials.map((social) => (
+    <div className='mt-3 grid w-fit grid-flow-col gap-8 pl-1 text-[1.7rem] leading-none'>
+      {Socials.map(({ id, ref, copyValue, icon: IconComponent, ariaLabel }) => (
         <Icon
-          key={social.id}
-          reference={social.ref}
-          copyValue={social.copyValue}
+          key={id}
+          reference={ref}
+          copyValue={copyValue}
+          ariaLabel={ariaLabel}
         >
-          {React.createElement(social.icon, {
-            className:
-              'fill-current focus:outline-none transition duration-300 ease-in-out hover:text-[#ad87ed] hover:scale-105',
-          })}
+          <IconComponent
+            className='fill-current transition-transform duration-300 ease-in-out hover:text-[#ad87ed] hover:scale-105 focus:outline-none'
+            aria-hidden='true'
+          />
         </Icon>
       ))}
     </div>
   )
-}
+})

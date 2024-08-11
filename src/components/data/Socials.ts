@@ -2,15 +2,15 @@ import { FaDiscord, FaEnvelope, FaGithub, FaSteam } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
 import type { IconType } from 'react-icons/lib'
 
-type Socials = {
+type Social = {
   id: number
   ref: string
   icon: IconType
   copyValue?: boolean
-  ariaLabel?: string
+  ariaLabel: string
 }
 
-export const Socials: Array<Socials> = [
+export const Socials: readonly Social[] = [
   {
     id: 1,
     ref: 'https://github.com/skidoodle',
@@ -43,4 +43,4 @@ export const Socials: Array<Socials> = [
     copyValue: true,
     ariaLabel: 'Discord',
   },
-]
+] as const
