@@ -98,9 +98,16 @@ export const NowPlayingCard = () => {
           </>
         )
       ) : (
-        <div className='w-full h-full flex items-center justify-center'>
-          Loading...
-        </div>
+        <>
+          <div className='w-[50px] h-[50px] select-none'>
+            <HiMusicNote size={50} className='pl-1 p-2.5' />
+          </div>
+          <div className='my-auto ml-4 min-w-48'>
+            <div className='text-l sm:text-regular font-semibold'>
+              <h1>Loading...</h1>
+            </div>
+          </div>
+        </>
       )}
     </div>
   )
