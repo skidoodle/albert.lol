@@ -20,9 +20,9 @@ export default function Document() {
         <meta property='og:image' content={metadata.image} />
         <script
           defer
-          data-domain='albert.lol'
-          src='https://analytics.albert.lol/js/script.js'
-        />
+          src="https://analytics.albert.lol/script.js"
+          data-website-id="f579488c-c994-42af-bc04-0e9578f62c4c">
+        </script>
         <link
           rel='preconnect'
           href='https://vitals.vercel-insights.com'
