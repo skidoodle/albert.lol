@@ -21,7 +21,7 @@ export default function Document() {
         <script
           defer
           src="https://analytics.albert.lol/script.js"
-          data-website-id="f579488c-c994-42af-bc04-0e9578f62c4c">
+          data-website-id="2c900d5e-c577-4824-ad37-0cdf68383c42">
         </script>
         <link
           rel='preconnect'
