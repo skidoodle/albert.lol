@@ -6,7 +6,7 @@ export const AboutMe = () => {
       <h2 className='text-3xl font-bold mb-4'>About Me</h2>
       <p className='text-base leading-relaxed'>
         I’m{' '}
-        <span className='font-semibold text-blue-400'>{age()}-year-old</span>,{' '}
+        <span className='font-semibold text-blue-400'>a {age()}-year-old</span>,{' '}
         studying{' '}
         <span className='font-medium text-orange-400'>
           Computer Science Operational Engineering
