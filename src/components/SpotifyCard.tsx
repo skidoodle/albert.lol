@@ -4,6 +4,7 @@ import { HiMusicNote } from 'react-icons/hi';
 import { truncate } from '@/utils/truncate';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const useSpotify = (): SpotifyData | undefined => {
   const [spotify, setSpotify] = useState<SpotifyData | undefined>(undefined);
@@ -41,12 +42,12 @@ export const NowPlayingCard = () => {
     return 0;
   }, [spotify]);
 
-  const renderSpotifyInfo = useCallback(() => {
+  const renderSpotify = useCallback(() => {
     if (!spotify) {
       return (
         <div className='flex items-center'>
           <HiMusicNote size={50} className='p-2.5' />
-          <div className='ml-4'>
+          <div className='ml-4 text-left'>
             <h1 className='font-semibold text-l'>Loading...</h1>
           </div>
         </div>
@@ -57,7 +58,7 @@ export const NowPlayingCard = () => {
       return (
         <div className='flex items-center'>
           <HiMusicNote size={50} className='p-2.5' />
-          <div className='ml-4'>
+          <div className='ml-4 text-left'>
             <h1 className='font-semibold text-l'>Not listening to anything</h1>
           </div>
         </div>
@@ -69,7 +70,7 @@ export const NowPlayingCard = () => {
     const albumImage = song.album.images[0]?.url || 'https://placehold.co/50x50.webp';
 
     return (
-      <div className='flex'>
+      <div className='flex items-center'>
         <div className='w-[50px] h-[50px]'>
           <Image
             priority={true}
@@ -82,27 +83,36 @@ export const NowPlayingCard = () => {
             quality={100}
           />
         </div>
-        <div className='ml-4 flex-1'>
+        <div className='ml-4 flex-1 text-left'>
           <Link href={song.external_urls.spotify || '/'}>
             <h1 className='font-semibold text-[#1ED760] hover:text-[#1DB954]'>
               {truncate(song.name, 20)}
             </h1>
           </Link>
           <h2 className='text-xs'>{truncate(artists, 20)}</h2>
-          <div className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700'>
+          <motion.div
+            className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700'
+            initial={{ width: 0 }}
+            animate={{ width: `${progressPercentage}%` }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
             <div
-              className='bg-[#1DB954] h-1 rounded-full transition-width duration-300 ease-in-out'
-              style={{ width: `${progressPercentage}%` }}
+              className='bg-[#1DB954] h-1 rounded-full'
             ></div>
-          </div>
+          </motion.div>
         </div>
       </div>
     );
   }, [spotify, progressPercentage]);
 
   return (
-    <div className='mt-5 max-w-sm w-[300px] h-[80px] rounded-md shadow-lg p-3'>
-      {renderSpotifyInfo()}
-    </div>
+    <motion.div
+      className='mt-5 max-w-sm w-[300px] h-[80px] rounded-md shadow-lg p-3'
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+    >
+      {renderSpotify()}
+    </motion.div>
   );
 };
