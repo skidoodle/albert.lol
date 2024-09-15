@@ -6,12 +6,12 @@ export const AboutMe = () => {
       <h2 className='text-3xl font-bold mb-4'>About Me</h2>
       <p className='text-base leading-relaxed'>
         I’m{' '}
-        <span className='font-semibold text-blue-400'>{age()} years old</span>,{' '}
+        <span className='font-semibold text-blue-400'>{age()}-year-old</span>,{' '}
         studying{' '}
         <span className='font-medium text-orange-400'>
           Computer Science Operational Engineering
         </span>{' '}
-        at the{' '}
+        at{' '}
         <span className='font-medium text-green-400'>Óbuda University</span> in
         Hungary. I’m passionate about{' '}
         <span className='text-red-400'>systems engineering</span>, working on my{' '}
