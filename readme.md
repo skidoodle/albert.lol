@@ -10,7 +10,10 @@
 
 - Refer to this [gist](https://gist.github.com/skidoodle/9a9dc9c8802434f7fc0da94ebe4dba18) for guidance
 - Deploy [spotify-ws](https://github.com/skidoodle/spotify-ws)
-- Set the correct WSS address in the [SpotifyCard](https://github.com/skidoodle/albert.lol/blob/1f8d8f5b6826982a45ff2d18f8448da95e181d17/src/components/SpotifyCard.tsx#L21C45-L21C45) component.
+- Set the correct WSS address in your `.env`.
+```
+NEXT_PUBLIC_SPOTIFY_WS=wss://example.com
+```
 
 ## Running Locally
 
