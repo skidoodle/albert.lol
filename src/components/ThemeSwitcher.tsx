@@ -1,14 +1,14 @@
-import { VscColorMode } from 'react-icons/vsc';
-import { useTheme } from 'next-themes';
-import { useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { VscColorMode } from 'react-icons/vsc'
+import { useTheme } from 'next-themes'
+import { useCallback } from 'react'
+import { motion } from 'framer-motion'
 
 export const ThemeSwitcher = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme()
 
   const toggleTheme = useCallback(() => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  }, [theme, setTheme]);
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }, [theme, setTheme])
 
   return (
     <motion.button
@@ -30,5 +30,5 @@ export const ThemeSwitcher = () => {
         <VscColorMode size={30} />
       </motion.div>
     </motion.button>
-  );
-};
+  )
+}

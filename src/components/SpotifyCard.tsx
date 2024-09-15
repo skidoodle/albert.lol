@@ -1,46 +1,48 @@
-import { useEffect, useState, useCallback, useMemo } from 'react';
-import type { SpotifyData } from '@/utils/types';
-import { HiMusicNote } from 'react-icons/hi';
-import { truncate } from '@/utils/truncate';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useEffect, useState, useCallback, useMemo } from 'react'
+import type { SpotifyData } from '@/utils/types'
+import { HiMusicNote } from 'react-icons/hi'
+import { truncate } from '@/utils'
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const useSpotify = (): SpotifyData | undefined => {
-  const [spotify, setSpotify] = useState<SpotifyData | undefined>(undefined);
+  const [spotify, setSpotify] = useState<SpotifyData | undefined>(undefined)
 
   useEffect(() => {
-    const socket = new WebSocket(process.env.NEXT_PUBLIC_SPOTIFY_WS || 'ws://localhost:3001');
+    const socket = new WebSocket(
+      process.env.NEXT_PUBLIC_SPOTIFY_WS || 'ws://localhost:3001'
+    )
 
     const handleMessage = (e: MessageEvent) => {
       try {
-        const data = JSON.parse(e.data);
-        setSpotify(data);
+        const data = JSON.parse(e.data)
+        setSpotify(data)
       } catch (error) {
-        console.error('Error parsing WebSocket message:', error);
+        console.error('Error parsing WebSocket message:', error)
       }
-    };
+    }
 
-    socket.addEventListener('message', handleMessage);
+    socket.addEventListener('message', handleMessage)
 
     return () => {
-      socket.removeEventListener('message', handleMessage);
-      socket.close();
-    };
-  }, []);
+      socket.removeEventListener('message', handleMessage)
+      socket.close()
+    }
+  }, [])
 
-  return spotify;
-};
+  return spotify
+}
 
 export const NowPlayingCard = () => {
-  const spotify = useSpotify();
+  const spotify = useSpotify()
 
   const progressPercentage = useMemo(() => {
     if (spotify && spotify.is_playing && spotify.item) {
-      return (spotify.progress_ms / spotify.item.duration_ms) * 100;
+      return (spotify.progress_ms / spotify.item.duration_ms) * 100
     }
-    return 0;
-  }, [spotify]);
+    return 0
+  }, [spotify])
 
   const renderSpotify = useCallback(() => {
     if (!spotify) {
@@ -51,7 +53,7 @@ export const NowPlayingCard = () => {
             <h1 className='font-semibold text-l'>Loading...</h1>
           </div>
         </div>
-      );
+      )
     }
 
     if (!spotify.is_playing) {
@@ -62,12 +64,14 @@ export const NowPlayingCard = () => {
             <h1 className='font-semibold text-l'>Not listening to anything</h1>
           </div>
         </div>
-      );
+      )
     }
 
-    const song = spotify.item;
-    const artists = song.artists?.map((artist) => artist.name).join(', ') || 'Unknown artist';
-    const albumImage = song.album.images[0]?.url || 'https://placehold.co/50x50.webp';
+    const song = spotify.item
+    const artists =
+      song.artists?.map((artist) => artist.name).join(', ') || 'Unknown artist'
+    const albumImage =
+      song.album.images[0]?.url || 'https://placehold.co/50x50.webp'
 
     return (
       <div className='flex items-center'>
@@ -96,14 +100,12 @@ export const NowPlayingCard = () => {
             animate={{ width: `${progressPercentage}%` }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div
-              className='bg-[#1DB954] h-1 rounded-full'
-            ></div>
+            <div className='bg-[#1DB954] h-1 rounded-full'></div>
           </motion.div>
         </div>
       </div>
-    );
-  }, [spotify, progressPercentage]);
+    )
+  }, [spotify, progressPercentage])
 
   return (
     <motion.div
@@ -114,5 +116,5 @@ export const NowPlayingCard = () => {
     >
       {renderSpotify()}
     </motion.div>
-  );
-};
+  )
+}

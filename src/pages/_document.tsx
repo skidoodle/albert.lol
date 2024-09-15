@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import age from '@/utils/age'
+import age from '@/utils'
 
 const metadata = {
   title: 'albert',
@@ -20,9 +20,9 @@ export default function Document() {
         <meta property='og:image' content={metadata.image} />
         <script
           defer
-          src="https://analytics.albert.lol/script.js"
-          data-website-id="2c900d5e-c577-4824-ad37-0cdf68383c42">
-        </script>
+          src='https://analytics.albert.lol/script.js'
+          data-website-id='2c900d5e-c577-4824-ad37-0cdf68383c42'
+        ></script>
         <link
           rel='preconnect'
           href='https://vitals.vercel-insights.com'
