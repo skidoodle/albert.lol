@@ -3,7 +3,7 @@ import age from '@/utils/age'
 
 const metadata = {
   title: 'albert',
-  description: `${age()}yo devops engineer`,
+  description: `${age()}yo CS student at University of Óbuda`,
   image: '/profile.webp',
   url: 'https://albert.lol',
 }
