@@ -18,7 +18,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>albert</title>
       </Head>
       <main className={`${albert_sans.variable} font-sans`}>
-        <ThemeProvider>
+        <ThemeProvider attribute='class'>
           <Component {...pageProps} />
         </ThemeProvider>
       </main>

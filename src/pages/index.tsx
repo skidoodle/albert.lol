@@ -28,7 +28,9 @@ export default function Home() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className='text-[7.5rem] leading-none font-bold'>albert</h1>
+              <h1 className='text-[7.5rem] leading-none font-bold dark:text-[#E0E0E0] text-[#121212]'>
+                albert
+              </h1>
               <SocialLayout />
               <NowPlayingCard />
             </motion.div>

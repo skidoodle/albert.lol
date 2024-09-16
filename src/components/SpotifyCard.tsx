@@ -90,10 +90,10 @@ export const NowPlayingCard = () => {
         <div className='ml-4 flex-1 text-left text-[1.2rem]'>
           <Link href={song.external_urls.spotify || '/'}>
             <h1 className='font-semibold text-[#1ED760] hover:text-[#1DB954]'>
-              {truncate(song.name, 20)}
+              {truncate(song.name, 19)}
             </h1>
           </Link>
-          <h2 className='text-xs'>{truncate(artists, 20)}</h2>
+          <h2 className='text-xs'>{truncate(artists, 35)}</h2>
           <motion.div
             className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700'
             initial={{ width: 0 }}
@@ -109,7 +109,7 @@ export const NowPlayingCard = () => {
 
   return (
     <motion.div
-      className='mt-5 max-w-sm w-[350px] h-[100px] rounded-md shadow-lg p-3'
+      className='mt-5 max-w-sm w-[350px] h-[100px] rounded-md shadow-lg p-3 dark:bg-[#1E1E1E] bg-[#F5F5F5]'
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
