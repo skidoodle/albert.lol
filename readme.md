@@ -11,7 +11,8 @@
 - Refer to this [gist](https://gist.github.com/skidoodle/9a9dc9c8802434f7fc0da94ebe4dba18) for guidance
 - Deploy [spotify-ws](https://github.com/skidoodle/spotify-ws)
 - Set the correct WSS address in your `.env`.
-```
+
+```sh
 NEXT_PUBLIC_SPOTIFY_WS=wss://example.com
 ```
 

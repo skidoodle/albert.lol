@@ -28,7 +28,7 @@ export default function Home() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className='text-[6rem] leading-none font-bold'>albert</h1>
+              <h1 className='text-[7.5rem] leading-none font-bold'>albert</h1>
               <SocialLayout />
               <NowPlayingCard />
             </motion.div>

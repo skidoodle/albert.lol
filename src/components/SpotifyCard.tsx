@@ -58,8 +58,8 @@ export const NowPlayingCard = () => {
 
     if (!spotify.is_playing) {
       return (
-        <div className='flex items-center'>
-          <HiMusicNote size={50} className='p-2.5' />
+        <div className='flex items-center text-[1.2rem]'>
+          <HiMusicNote size={75} className='p-2.5' />
           <div className='ml-4 text-left'>
             <h1 className='font-semibold text-l'>Not listening to anything</h1>
           </div>
@@ -75,11 +75,11 @@ export const NowPlayingCard = () => {
 
     return (
       <div className='flex items-center'>
-        <div className='w-[50px] h-[50px]'>
+        <div className='w-[75px] h-[75px]'>
           <Image
             priority={true}
-            width={50}
-            height={50}
+            width={75}
+            height={75}
             alt='Song cover art'
             className='rounded-md'
             draggable={false}
@@ -87,7 +87,7 @@ export const NowPlayingCard = () => {
             quality={100}
           />
         </div>
-        <div className='ml-4 flex-1 text-left'>
+        <div className='ml-4 flex-1 text-left text-[1.2rem]'>
           <Link href={song.external_urls.spotify || '/'}>
             <h1 className='font-semibold text-[#1ED760] hover:text-[#1DB954]'>
               {truncate(song.name, 20)}
@@ -109,7 +109,7 @@ export const NowPlayingCard = () => {
 
   return (
     <motion.div
-      className='mt-5 max-w-sm w-[300px] h-[80px] rounded-md shadow-lg p-3'
+      className='mt-5 max-w-sm w-[350px] h-[100px] rounded-md shadow-lg p-3'
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}

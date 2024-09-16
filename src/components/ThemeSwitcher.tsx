@@ -27,7 +27,7 @@ export const ThemeSwitcher = () => {
         animate={{ rotate: theme === 'light' ? 0 : 180 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <VscColorMode size={30} />
+        <VscColorMode size={35} />
       </motion.div>
     </motion.button>
   )

@@ -24,7 +24,7 @@ export const Icon = ({
 
   return (
     <motion.div
-      className='cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110'
+      className='cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110 text-[1.25em]'
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}

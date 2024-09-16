@@ -11,6 +11,9 @@ export interface SpotifyData {
   item: {
     artists: {
       name: string
+      external_urls: {
+        spotify: string
+      }
     }[]
     album: {
       images: {
