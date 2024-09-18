@@ -95,7 +95,7 @@ export const NowPlayingCard = () => {
           </Link>
           <h2 className='text-xs'>{truncate(artists, 35)}</h2>
           <motion.div
-            className='mt-2 bg-gray-200 rounded-full h-1 dark:bg-gray-700'
+            className='mt-2 rounded-full h-1'
             initial={{ width: 0 }}
             animate={{ width: `${progressPercentage}%` }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -109,7 +109,7 @@ export const NowPlayingCard = () => {
 
   return (
     <motion.div
-      className='mt-5 max-w-sm w-[350px] h-[100px] rounded-md shadow-lg p-3 dark:bg-[#1E1E1E] bg-[#F5F5F5]'
+      className='mt-5 min-w-[325px] max-w-[500px] md:max-w-md lg:max-w-lg h-[100px] rounded-md shadow-lg p-3 dark:bg-[#1E1E1E] bg-[#F5F5F5]'
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}

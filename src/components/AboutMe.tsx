@@ -2,7 +2,7 @@ import age from '@/utils'
 
 export const AboutMe = () => {
   return (
-    <section className='p-4 max-w-xs sm:max-w-sm lg:max-w-lg rounded-lg shadow-lg dark:bg-[#1E1E1E] bg-[#F5F5F5]'>
+    <section className='p-4 max-w-[325px] lg:max-w-lg md:max-w-md rounded-lg shadow-lg dark:bg-[#1E1E1E] bg-[#F5F5F5]'>
       <h2 className='text-3xl font-bold mb-4 text-[3rem] dark:text-[#A3A3A3] text-[#666666]'>
         about me
       </h2>
