@@ -89,11 +89,13 @@ export const NowPlayingCard = () => {
         </div>
         <div className='ml-4 flex-1 text-left text-[1.2rem]'>
           <Link href={song.external_urls.spotify || '/'}>
-            <h1 className='font-semibold text-[#1ED760] hover:text-[#1DB954]'>
-              {truncate(song.name, 19)}
+            <h1 className='font-semibold text-[#1ED760] hover:text-[#1DB954] truncate w-[250px]'>
+              {truncate(song.name, 20)}
             </h1>
           </Link>
-          <h2 className='text-xs'>{truncate(artists, 35)}</h2>
+          <h2 className='text-xs truncate w-[250px]'>
+            {truncate(artists, 35)}
+          </h2>
           <motion.div
             className='mt-2 rounded-full h-1'
             initial={{ width: 0 }}
@@ -109,10 +111,11 @@ export const NowPlayingCard = () => {
 
   return (
     <motion.div
-      className='mt-5 min-w-[325px] max-w-[500px] md:max-w-md lg:max-w-lg h-[100px] rounded-md shadow-lg p-3 dark:bg-[#1E1E1E] bg-[#F5F5F5]'
+      className='mt-5 min-w-[325px] max-w-[500px] md:max-w-md lg:max-w-lg h-[100px] rounded-md shadow-lg p-3 dark:bg-[--dark-primary] bg-[--light-primary]'
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
+      whileHover={{ scale: 1.05 }}
     >
       {renderSpotify()}
     </motion.div>

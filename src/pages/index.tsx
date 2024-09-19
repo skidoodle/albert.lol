@@ -27,7 +27,7 @@ export default function Home() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className='text-[7.5rem] leading-none font-bold dark:text-[#E0E0E0] text-[#121212]'>
+              <h1 className='text-[7.5rem] leading-none font-bold dark:text-[--dark-text] text-[--light-text]'>
                 albert
               </h1>
               <SocialLayout />

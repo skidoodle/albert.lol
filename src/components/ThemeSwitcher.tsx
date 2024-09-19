@@ -25,6 +25,7 @@ export const ThemeSwitcher = () => {
       onClick={toggleTheme}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
+      whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       <motion.div
