@@ -10,7 +10,6 @@ export default function Home() {
     <>
       <ThemeSwitcher />
       <motion.div
-        className='ml-[10%] mr-[10%]'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -23,12 +22,12 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <motion.div
-              className='flex flex-col items-center max-w-lg text-center'
+              className='flex flex-col items-center text-center'
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className='text-[7.5rem] leading-none font-bold dark:text-[#E0E0E0] text-[#121212]'>
+              <h1 className='text-[7.5rem] leading-none font-bold dark:text-[--dark-text] text-[--light-text]'>
                 albert
               </h1>
               <SocialLayout />

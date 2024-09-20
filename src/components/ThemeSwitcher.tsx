@@ -21,12 +21,11 @@ export const ThemeSwitcher = () => {
     <motion.button
       aria-label='Switch Theme'
       type='button'
-      className={`fixed top-5 right-5 p-3 rounded-full ${
-        theme === 'light' ? 'hover:bg-gray-300' : 'hover:dark:bg-gray-700'
-      }`}
+      className='fixed top-5 right-5 p-3 rounded-full'
       onClick={toggleTheme}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
+      whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       <motion.div

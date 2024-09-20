@@ -10,5 +10,10 @@ export default function age() {
   )
 }
 
-export const truncate = (str: string, n: number) =>
-  str.length > n ? str.slice(0, n - 1) + '...' : str
+export const truncate = (str: string, n: number): string => {
+  if (str.length > n) {
+    const truncated = str.slice(0, n - 3).trimEnd()
+    return `${truncated}...`
+  }
+  return str.trim()
+}
