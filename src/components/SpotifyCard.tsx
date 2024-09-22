@@ -47,10 +47,10 @@ export const NowPlayingCard = () => {
   const renderSpotify = useCallback(() => {
     if (!spotify) {
       return (
-        <div className='flex items-center'>
-          <HiMusicNote size={50} className='p-2.5' />
-          <div className='ml-4 text-left'>
-            <h1 className='font-semibold text-l'>Loading...</h1>
+        <div className="flex items-center text-[1.2rem]">
+          <HiMusicNote size={75} className="p-3" />
+          <div className="ml-4 text-left">
+            <h1 className="font-semibold text-l">Loading...</h1>
           </div>
         </div>
       )
@@ -58,10 +58,10 @@ export const NowPlayingCard = () => {
 
     if (!spotify.is_playing) {
       return (
-        <div className='flex items-center text-[1.2rem]'>
-          <HiMusicNote size={75} className='p-2.5' />
-          <div className='ml-4 text-left'>
-            <h1 className='font-semibold text-l'>Not listening to anything</h1>
+        <div className="flex items-center text-[1.2rem]">
+          <HiMusicNote size={75} className="p-3" />
+          <div className="ml-4 text-left">
+            <h1 className="font-semibold text-l">Not listening to anything</h1>
           </div>
         </div>
       )
@@ -74,35 +74,35 @@ export const NowPlayingCard = () => {
       song.album.images[0]?.url || 'https://placehold.co/50x50.webp'
 
     return (
-      <div className='flex items-center'>
-        <div className='w-[75px] h-[75px]'>
+      <div className="flex items-center">
+        <div className="w-[75px] h-[75px]">
           <Image
             priority={true}
             width={75}
             height={75}
-            alt='Song cover art'
-            className='rounded-md'
+            alt="Song cover art"
+            className="rounded-md object-cover w-full h-full"
             draggable={false}
             src={albumImage}
             quality={100}
           />
         </div>
-        <div className='ml-4 flex-1 text-left text-[1.2rem]'>
+        <div className="ml-4 flex-1 text-left text-[1rem]">
           <Link href={song.external_urls.spotify || '/'}>
-            <h1 className='font-semibold text-[#1ED760] hover:text-[#1DB954] truncate w-[250px]'>
+            <h1 className="font-semibold text-[#1ED760] hover:text-[#1DB954] truncate">
               {truncate(song.name, 20)}
             </h1>
           </Link>
-          <h2 className='text-xs truncate w-[250px]'>
+          <h2 className="text-xs truncate">
             {truncate(artists, 35)}
           </h2>
           <motion.div
-            className='mt-2 rounded-full h-1'
+            className="mt-2 rounded-full h-1"
             initial={{ width: 0 }}
             animate={{ width: `${progressPercentage}%` }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div className='bg-[#1DB954] h-1 rounded-full'></div>
+            <div className="bg-[#1DB954] h-1 rounded-full"></div>
           </motion.div>
         </div>
       </div>
@@ -111,7 +111,7 @@ export const NowPlayingCard = () => {
 
   return (
     <motion.div
-      className='mt-5 min-w-[325px] max-w-[500px] md:max-w-md lg:max-w-lg h-[100px] rounded-md shadow-lg p-3 dark:bg-[--dark-primary] bg-[--light-primary]'
+      className="mt-5 h-[100px] rounded-md shadow-lg p-3 dark:bg-[--dark-primary] bg-[--light-primary] w-full max-w-[400px] sm:max-w-[500px]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
