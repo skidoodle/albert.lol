@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --dark-background: #222831;
-  --dark-primary: #31363f;
-  --dark-secondary: #76abae;
+  --dark-background: #000000;
+  --dark-primary: #121212;
+  --dark-secondary: #aaaaaa;
   --dark-text: #eeeeee;
 
   --light-background: #eeeeee;
-  --light-primary: #d7d9de;
-  --light-secondary: #897d7a;
-  --light-text: #222831;
+  --light-primary: #dddddd;
+  --light-secondary: #888888;
+  --light-text: #222222;
 }
 
 @layer base {
