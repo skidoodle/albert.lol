@@ -14,7 +14,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className='mx-auto mt-44 flex max-w-3xl flex-col'>
+        <div className='mx-auto mt-44 flex max-w-3xl flex-col mb-12'>
           <motion.div
             className='flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-10 lg:space-y-5 lg:space-x-10'
             initial={{ opacity: 0 }}
