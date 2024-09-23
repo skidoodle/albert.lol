@@ -10,22 +10,39 @@ export const AboutMe = () => {
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className='text-3.5xl font-bold mb-4 text-[3rem] dark:text-[--dark-secondary] text-[--light-secondary]'>
+      <h2 className='text-[3rem] font-bold mb-4 dark:text-[--dark-secondary] text-[--light-secondary]'>
         about me
       </h2>
-      <p className='text-base leading-relaxed text-[1.15rem]'>
+      <p className='lg:text-lg'>
         I’m a{' '}
-        <span className='font-semibold text-blue-400'>{age()}-year-old</span>,{' '}
-        studying{' '}
-        <span className='font-medium text-orange-400'>
+        <span className='font-semibold text-blue-600 dark:text-blue-400'>
+          {age()}-year-old
+        </span>
+        , studying{' '}
+        <span className='font-medium text-orange-600 dark:text-orange-400'>
           Computer Science Operational Engineering
         </span>{' '}
-        at <span className='font-medium text-green-400'>Óbuda University</span>{' '}
+        at{' '}
+        <span className='font-medium text-green-600 dark:text-green-400'>
+          Óbuda University
+        </span>{' '}
         in Hungary. I’m passionate about{' '}
-        <span className='text-red-400'>systems engineering</span>, working on my{' '}
-        <span className='italic text-green-500'>homelab</span>, and coding in{' '}
-        <span className='font-medium text-purple-400'>TypeScript</span> and{' '}
-        <span className='font-medium text-purple-400'>Go</span>.
+        <span className='text-red-600 dark:text-red-400'>
+          systems engineering
+        </span>
+        , working on my{' '}
+        <span className='italic text-green-700 dark:text-green-500'>
+          homelab
+        </span>
+        , and coding in{' '}
+        <span className='font-medium text-purple-600 dark:text-purple-400'>
+          TypeScript
+        </span>{' '}
+        and{' '}
+        <span className='font-medium text-purple-600 dark:text-purple-400'>
+          Go
+        </span>
+        .
       </p>
     </motion.div>
   )
