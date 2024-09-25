@@ -4,17 +4,19 @@ import { SocialLayout } from '@/components/SocialLayout'
 import { AboutMe } from '@/components/AboutMe'
 import { Toaster } from 'react-hot-toast'
 import { motion } from 'framer-motion'
+import { Background } from '@/components/Background'
 
 export default function Home() {
   return (
     <>
+      <Background />
       <ThemeSwitcher />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className='mx-auto mt-44 flex max-w-3xl flex-col mb-12'>
+        <div className='mx-auto mt-44 flex max-w-3xl flex-col mb-12 z-10 relative'>
           <motion.div
             className='flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-10 lg:space-y-5 lg:space-x-10'
             initial={{ opacity: 0 }}

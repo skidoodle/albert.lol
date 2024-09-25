@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export const AboutMe = () => {
   return (
     <motion.div
-      className='p-3 max-w-[325px] lg:max-w-lg md:max-w-md max-h-[300px] h-[265px] rounded-lg shadow-lg dark:bg-[--dark-primary] bg-[--light-primary]'
+      className='p-3 max-w-[325px] lg:max-w-lg md:max-w-md max-h-[300px] h-[265px] rounded-lg shadow-lg backdrop-blur-sm bg-white/20 dark:bg-black/20'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       whileHover={{ scale: 1.05 }}
