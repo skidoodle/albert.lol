@@ -33,6 +33,10 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
+  {
+    key: 'X-Source',
+    value: 'github.com/skidoodle/albert.lol',
+  },
 ]
 
 /** @type {import('next').NextConfig} */
