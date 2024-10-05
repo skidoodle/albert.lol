@@ -5,6 +5,7 @@ import { AboutMe } from '@/components/AboutMe'
 import { Toaster } from 'react-hot-toast'
 import { motion } from 'framer-motion'
 import { Background } from '@/components/Background'
+import React from 'react'
 
 export default function Home() {
   return (

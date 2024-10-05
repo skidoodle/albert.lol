@@ -1,34 +1,40 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+
 export const Background = () => {
   return (
-    <div className='gradient-bg'>
-      <svg
-        viewBox='0 0 100vw 100vw'
-        xmlns='http://www.w3.org/2000/svg'
-        className='noiseBg'
-      >
-        <filter id='noiseFilterBg'>
-          <feTurbulence
-            type='fractalNoise'
-            baseFrequency='0.6'
-            stitchTiles='stitch'
-          />
-        </filter>
+    <div className='fixed inset-0 w-screen h-screen overflow-hidden z-[-1] flex justify-center items-center'>
+      <motion.div
+        className='absolute w-[800px] h-[800px] bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-3xl'
+        style={{ willChange: 'transform, opacity' }}
+        animate={{
+          scale: [1.5, 1.2, 1, 1.2, 1.5],
+          x: [0, 200, 0, -200, 0],
+          y: [0, -80, 150, -150, 0],
+          opacity: [0.6, 1, 0.6],
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
 
-        <rect
-          width='100%'
-          height='100%'
-          preserveAspectRatio='xMidYMid meet'
-          filter='url(#noiseFilterBg)'
-        />
-      </svg>
-
-      <div className='gradients-container'>
-        <div className='g1'></div>
-        <div className='g2'></div>
-        <div className='g3'></div>
-        <div className='g4'></div>
-        <div className='g5'></div>
-      </div>
+      <motion.div
+        className='absolute w-[800px] h-[800px] bg-gradient-to-r from-blue-400 to-red-500 rounded-full blur-3xl'
+        style={{ willChange: 'transform, opacity' }}
+        animate={{
+          scale: [1, 1.3, 1.5, 1.3, 1],
+          x: [-150, 150, -150, 150, -150],
+          y: [180, -180, 180, -180, 180],
+          opacity: [0.6, 1, 0.6],
+        }}
+        transition={{
+          duration: 22,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
     </div>
   )
 }

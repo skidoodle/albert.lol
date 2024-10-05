@@ -3,8 +3,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from 'next-themes'
 import { Albert_Sans } from 'next/font/google'
 import type { AppProps } from 'next/app'
-import '@/styles/globals.scss'
+import '@/styles/globals.css'
 import Head from 'next/head'
+import React from 'react'
 
 const albert_sans = Albert_Sans({
   subsets: ['latin'],
