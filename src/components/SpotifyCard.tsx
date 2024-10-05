@@ -89,7 +89,7 @@ export const NowPlayingCard = () => {
         </div>
         <div className='ml-4 flex-1 text-left text-[1.15rem]'>
           <Link href={song.external_urls.spotify || '/'}>
-            <h1 className='font-semibold dark:text-[#1ED760] dark:hover:text-[#1DB954] hover:text-[#ACD793] text-[#BFF6C3] truncate'>
+            <h1 className='font-semibold text-[#1ED760] hover:text-[#1DB954] truncate'>
               {truncate(song.name, 20)}
             </h1>
           </Link>
@@ -100,7 +100,7 @@ export const NowPlayingCard = () => {
             animate={{ width: `${progressPercentage}%` }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div className='dark:bg-[#1DB954] bg-[#ACD793] h-1 rounded-full'></div>
+            <div className='bg-[#1DB954] h-1 rounded-full'></div>
           </motion.div>
         </div>
       </div>
