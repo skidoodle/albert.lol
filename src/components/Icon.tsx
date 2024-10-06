@@ -2,6 +2,7 @@ import copy from 'copy-to-clipboard'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
 import type { IconType } from '@/utils/types'
 
 export const Icon = ({
@@ -10,15 +11,29 @@ export const Icon = ({
   copyValue,
   ariaLabel,
 }: IconType) => {
+  const { theme } = useTheme() as { theme: 'light' | 'dark' }
+
   const handleCopy = () => {
     toast.remove()
+
+    const toastStyle = {
+      light: {
+        background: 'var(--light-primary)',
+        color: 'var(--light-text)',
+      },
+      dark: {
+        background: 'var(--dark-primary)',
+        color: 'var(--dark-text)',
+      },
+    }
+
     toast.success('Copied to clipboard', {
       style: {
-        background: '#0f1012',
-        color: '#fff',
+        ...toastStyle[theme || 'light'],
         fontSize: '1em',
       },
     })
+
     copy(reference)
   }
 

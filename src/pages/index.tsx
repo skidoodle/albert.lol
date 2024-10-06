@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <Background />
       <ThemeSwitcher />
+      <Toaster position='top-left' />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,7 +40,6 @@ export default function Home() {
             <AboutMe />
           </motion.div>
         </div>
-        <Toaster position='top-left' />
       </motion.div>
     </>
   )

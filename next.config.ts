@@ -1,4 +1,4 @@
-// @ts-check
+import type { NextConfig } from 'next'
 
 const securityHeaders = [
   {
@@ -40,7 +40,7 @@ const securityHeaders = [
 ]
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   async headers() {
     return [
       {
@@ -62,8 +62,7 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
-  swcMinify: true,
   output: 'standalone',
 }
 
-module.exports = nextConfig
+export default nextConfig

@@ -15,7 +15,7 @@ export const Background = () => {
         }}
         transition={{
           duration: 18,
-          repeat: Infinity,
+          repeat: Number.POSITIVE_INFINITY,
           ease: 'easeInOut',
         }}
       />
@@ -31,7 +31,7 @@ export const Background = () => {
         }}
         transition={{
           duration: 22,
-          repeat: Infinity,
+          repeat: Number.POSITIVE_INFINITY,
           ease: 'easeInOut',
         }}
       />

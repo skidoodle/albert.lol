@@ -1,5 +1,5 @@
 export type IconType = {
-  children: React.ReactNode
+  children: IconType
   reference: string
   copyValue?: boolean
   ariaLabel: string
