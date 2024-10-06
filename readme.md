@@ -1,9 +1,9 @@
 # albert.lol
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Deployment**: [Vercel](https://vercel.com)
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
-- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
+- **Analytics**: [Umami](https://umami.is/)
 - **Spotify**: [spotify-ws](https://github.com/skidoodle/spotify-ws)
 
 ## Spotify integration
