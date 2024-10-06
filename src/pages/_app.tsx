@@ -10,7 +10,7 @@ const albert_sans = Albert_Sans({
   variable: '--font-inter',
 })
 
-export const App = ({ Component, pageProps }: AppProps) => {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <Head>

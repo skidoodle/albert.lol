@@ -1,5 +1,3 @@
-import type { NextConfig } from 'next'
-
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -40,7 +38,7 @@ const securityHeaders = [
 ]
 
 /** @type {import('next').NextConfig} */
-const nextConfig: NextConfig = {
+const nextConfig = {
   async headers() {
     return [
       {
@@ -65,4 +63,4 @@ const nextConfig: NextConfig = {
   output: 'standalone',
 }
 
-export default nextConfig
+module.exports = nextConfig
