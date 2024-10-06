@@ -1,5 +1,7 @@
+import { ReactNode } from 'react'
+
 export type IconType = {
-  children: IconType
+  children: ReactNode
   reference: string
   copyValue?: boolean
   ariaLabel: string

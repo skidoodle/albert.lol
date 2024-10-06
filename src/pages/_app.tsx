@@ -1,20 +1,18 @@
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { ThemeProvider } from 'next-themes'
 import { Albert_Sans } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
+import { Fragment } from 'react'
 import '@/styles/globals.css'
 import Head from 'next/head'
-import React from 'react'
 
 const albert_sans = Albert_Sans({
   subsets: ['latin'],
   variable: '--font-inter',
 })
 
-const App = ({ Component, pageProps }: AppProps) => {
+export const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
+    <Fragment>
       <Head>
         <title>albert</title>
       </Head>
@@ -23,10 +21,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           <Component {...pageProps} />
         </ThemeProvider>
       </main>
-      <SpeedInsights />
-      <Analytics />
-    </>
+    </Fragment>
   )
 }
-
-export default App

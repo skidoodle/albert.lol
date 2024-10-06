@@ -1,10 +1,11 @@
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import { motion } from 'framer-motion'
+import { Fragment } from 'react'
 import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <>
+    <Fragment>
       <ThemeSwitcher />
       <div className='ml-[10%] mr-[10%]'>
         <div className='mx-auto mb-16 mt-32 max-w-3xl flex flex-col'>
@@ -33,6 +34,6 @@ export default function NotFound() {
           </motion.div>
         </div>
       </div>
-    </>
+    </Fragment>
   )
 }
