@@ -23,11 +23,6 @@ export default function Document() {
           src='https://analytics.albert.lol/script.js'
           data-website-id='2c900d5e-c577-4824-ad37-0cdf68383c42'
         ></script>
-        <link
-          rel='preconnect'
-          href='https://vitals.vercel-insights.com'
-          crossOrigin='anonymous'
-        />
       </Head>
       <body>
         <Main />
