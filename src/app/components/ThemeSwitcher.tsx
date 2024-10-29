@@ -11,10 +11,17 @@ export const ThemeSwitcher = () => {
 
 	useEffect(() => {
 		setMounted(true);
+
+		if (!localStorage.getItem("theme")) {
+			localStorage.setItem("theme", "system");
+		}
 	}, []);
 
 	const toggleTheme = useCallback(() => {
-		setTheme(theme === "light" ? "dark" : "light");
+		const newTheme =
+			theme === "light" ? "dark" : theme === "dark" ? "light" : "dark";
+		setTheme(newTheme);
+		localStorage.setItem("theme", newTheme);
 	}, [theme, setTheme]);
 
 	if (!mounted) return null;

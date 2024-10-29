@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import type { IconType } from "@/utils/types";
+import { useEffect, useState } from "react";
 
 export const Icon = ({
 	children,
@@ -11,29 +12,43 @@ export const Icon = ({
 	copyValue,
 	ariaLabel,
 }: IconType) => {
-	const { theme } = useTheme() as { theme: "light" | "dark" };
+	const { theme } = useTheme() as { theme: "light" | "dark" | "system" };
+	const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
+
+	useEffect(() => {
+		if (!localStorage.getItem("theme")) {
+			localStorage.setItem("theme", "system");
+		}
+
+		if (theme === "system") {
+			const prefersDark = window.matchMedia(
+				"(prefers-color-scheme: dark)",
+			).matches;
+			setResolvedTheme(prefersDark ? "dark" : "light");
+		} else {
+			setResolvedTheme(theme);
+		}
+	}, [theme]);
+
+	const toastStyle = {
+		light: {
+			background: "var(--light-primary)",
+			color: "var(--light-text)",
+		},
+		dark: {
+			background: "var(--dark-primary)",
+			color: "var(--dark-text)",
+		},
+	};
 
 	const handleCopy = () => {
 		toast.remove();
-
-		const toastStyle = {
-			light: {
-				background: "var(--light-primary)",
-				color: "var(--light-text)",
-			},
-			dark: {
-				background: "var(--dark-primary)",
-				color: "var(--dark-text)",
-			},
-		};
-
 		toast.success("Copied to clipboard", {
 			style: {
-				...toastStyle[theme || "light"],
+				...toastStyle[resolvedTheme],
 				fontSize: "1em",
 			},
 		});
-
 		copy(reference);
 	};
 
