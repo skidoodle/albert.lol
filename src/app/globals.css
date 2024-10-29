@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--dark-background: #000000;
+	--dark-primary: #121212;
+	--dark-secondary: #cecece;
+	--dark-text: #eeeeee;
+
+	--light-background: #eeeeee;
+	--light-primary: #dddddd;
+	--light-secondary: #5c5c5c;
+	--light-text: #222222;
+}
+
+@layer base {
+	html {
+		scrollbar-width: thin;
+		scrollbar-color: #8040ee transparent;
+		background-color: var(--light-background);
+	}
+
+	.dark {
+		background-color: var(--dark-background);
+	}
+}
+
+@layer components {
+	::selection {
+		background-color: #8040ee;
+		color: #fff;
+	}
+
+	::-webkit-scrollbar {
+		width: 3px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #8040ee;
+		border-radius: 10px;
+	}
+}
