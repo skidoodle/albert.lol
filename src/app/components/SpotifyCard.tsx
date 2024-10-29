@@ -40,7 +40,7 @@ export const NowPlayingCard = () => {
 	const spotify = useSpotify();
 
 	const progressPercentage = useMemo(() => {
-		if (spotify && spotify.is_playing && spotify.item) {
+		if (spotify?.is_playing && spotify.item) {
 			return (spotify.progress_ms / spotify.item.duration_ms) * 100;
 		}
 		return 0;
@@ -102,7 +102,7 @@ export const NowPlayingCard = () => {
 						animate={{ width: `${progressPercentage}%` }}
 						transition={{ duration: 0.3, ease: "easeInOut" }}
 					>
-						<div className="bg-[#1DB954] h-1 rounded-full"></div>
+						<div className="bg-[#1DB954] h-1 rounded-full" />
 					</motion.div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Albert_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import age from "@/utils";
@@ -26,12 +26,12 @@ export default function RootLayout({
 	children: ReactNode;
 }>) {
 	return (
-		<html lang="zxx" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning>
 			<Script
 				defer
 				src="https://analytics.albert.lol/script.js"
 				data-website-id="2c900d5e-c577-4824-ad37-0cdf68383c42"
-			></Script>
+			/>
 			<body className={`${albert_sans.variable} font-sans antialiased`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{children}
