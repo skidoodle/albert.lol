@@ -1,3 +1,6 @@
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 export default function age() {
 	const BIRTHDATE = process.env.NEXT_PUBLIC_BIRTHDATE;
 	if (!BIRTHDATE) {
@@ -17,3 +20,7 @@ export const truncate = (str: string, n: number): string => {
 	}
 	return str.trim();
 };
+
+export function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs));
+}

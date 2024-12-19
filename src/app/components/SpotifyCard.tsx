@@ -111,7 +111,7 @@ export const NowPlayingCard = () => {
 
 	return (
 		<motion.div
-			className="mt-5 w-[325px] rounded-md shadow-lg p-3 dark:bg-black/20 bg-white/20 backfrop-blur-sm"
+			className="mt-5 w-[325px] rounded-md shadow-lg p-3 dark:bg-black bg-white"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5, ease: "easeInOut" }}
