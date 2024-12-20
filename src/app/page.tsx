@@ -6,13 +6,13 @@ import { SocialLayout } from "@/components/SocialLayout";
 import { AboutMe } from "@/components/AboutMe";
 import { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
-import { HeroHighlight } from "@/components/Highlight";
+import { Highlight } from "@/components/Highlight";
 import { Fragment } from "react";
 
 export default function Home() {
 	return (
 		<Fragment>
-			<HeroHighlight containerClassName="min-h-screen flex items-start">
+			<Highlight containerClassName="min-h-screen flex items-start">
 				<ThemeSwitcher />
 				<Toaster position="top-left" />
 				<motion.div
@@ -20,7 +20,7 @@ export default function Home() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
 				>
-					<div className="flex max-w-3xl flex-col z-10 relative mt-52">
+					<div className="flex max-w-3xl flex-col z-10 relative mt-24 lg:mt-56">
 						<motion.div
 							className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-10 lg:space-y-5 lg:space-x-10"
 							initial={{ opacity: 0 }}
@@ -43,7 +43,7 @@ export default function Home() {
 						</motion.div>
 					</div>
 				</motion.div>
-			</HeroHighlight>
+			</Highlight>
 		</Fragment>
 	);
 }

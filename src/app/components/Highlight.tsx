@@ -3,7 +3,7 @@
 import { cn } from "@/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 
-export const HeroHighlight = ({
+export const Highlight = ({
 	children,
 	className,
 	containerClassName,

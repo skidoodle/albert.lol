@@ -18,11 +18,11 @@
 	html {
 		scrollbar-width: thin;
 		scrollbar-color: #8040ee transparent;
-		background-color: var(--light-background);
+		background-color: transparent;
 	}
 
 	.dark {
-		background-color: var(--dark-background);
+		background-color: transparent;
 	}
 }
 
