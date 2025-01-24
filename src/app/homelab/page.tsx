@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Highlight } from "@/components/Highlight";
 import { Fragment } from "react";
 import { specs } from "@/utils";
+import Link from 'next/link';
 
 export default function Homelab() {
 	return (
@@ -17,7 +18,7 @@ export default function Homelab() {
 					transition={{ duration: 0.5 }}
 					className="absolute top-6 left-6"
 				>
-					<a href="/" className="text-[--text-secondary] dark:[--text-primary]">
+					<Link href="/" className="text-[--text-secondary] dark:[--text-primary]">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="h-6 w-6"
@@ -33,7 +34,7 @@ export default function Homelab() {
 								d="M10 19l-7-7m0 0l7-7m-7 7h18"
 							/>
 						</svg>
-					</a>
+					</Link>
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
