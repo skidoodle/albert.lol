@@ -2,6 +2,7 @@
 
 import age from "@/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export const AboutMe = () => (
 	<motion.div
@@ -18,38 +19,31 @@ export const AboutMe = () => (
 			I’m a{" "}
 			<span className="font-semibold text-blue-600 dark:text-blue-400">
 				{age()}-year-old
-			</span>
-			, studying
-			<span className="font-medium text-orange-600 dark:text-orange-400">
-				{" "}
-				Computer Science Operational Engineering
 			</span>{" "}
-			at
-			<span className="font-medium text-green-600 dark:text-green-400">
-				{" "}
-				Óbuda University
+			<span className="font-semibold text-gray-800 dark:text-gray-200">
+				developer
 			</span>{" "}
-			in Hungary. I’m passionate about
-			<span className="text-red-600 dark:text-red-400">
-				{" "}
-				systems engineering
+			and{" "}
+			<span className="font-medium text-cyan-600 dark:text-cyan-400">
+				tech enthusiast
 			</span>
-			, working on my
-			<span className="italic text-green-700 dark:text-green-500">
-				{" "}
-				homelab
-			</span>
-			, and coding in
+			. I enjoy working on my{" "}
+			<span className="italic text-indigo-700 dark:text-indigo-500">
+				<Link href="homelab">homelab</Link>
+			</span>{" "}
+			and coding in{" "}
 			<span className="font-medium text-purple-600 dark:text-purple-400">
-				{" "}
-				TypeScript
+				<Link href="https://www.typescriptlang.org/" target="_blank">
+					TypeScript
+				</Link>
 			</span>{" "}
-			and
+			and{" "}
 			<span className="font-medium text-purple-600 dark:text-purple-400">
-				{" "}
-				Go
+				<Link href="https://go.dev/" target="_blank">
+					Go
+				</Link>
+				.
 			</span>
-			.
 		</p>
 	</motion.div>
 );

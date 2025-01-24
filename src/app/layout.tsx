@@ -14,7 +14,7 @@ const albert_sans = Albert_Sans({
 export const metadata: Metadata = {
 	metadataBase: new URL("https://albert.lol"),
 	title: "albert",
-	description: `${age()}yo student at Óbuda University`,
+	description: `${age()}yo tech enthusiast`,
 	openGraph: {
 		images: "/profile.webp",
 	},
