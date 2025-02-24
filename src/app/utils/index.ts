@@ -26,12 +26,12 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const specs = [
-	{ title: "Model", value: "Dell R730" },
-	{ title: "OS", value: "Proxmox" },
-	{ title: "CPU", value: "Intel Xeon E5-2680v4 x2" },
-	{ title: "RAM", value: "128GB" },
-	{ title: "GPU", value: "NVIDIA GTX 1050Ti" },
-	{ title: "Boot", value: "WD Black SN770 1TB x2" },
-	{ title: "Pool", value: "Toshiba Enterprise 6TB x8" },
-	{ title: "Power", value: "750W Platinum x2" },
+	{ title: "Model", value: "Dell PowerEdge R730" },
+	{ title: "Operating System", value: "Proxmox VE" },
+	{ title: "Processor", value: "2x Intel Xeon E5-2680 v4" },
+	{ title: "Memory", value: "8x 16GB Samsung ECC" },
+	{ title: "Graphics Card", value: "NVIDIA GTX 1050 Ti" },
+	{ title: "System Drives", value: "2x WD Black SN770 1TB" },
+	{ title: "Storage Pool", value: "8x Toshiba Enterprise 6TB" },
+	{ title: "Power Supplies", value: "2x 750W Platinum" },
 ];
