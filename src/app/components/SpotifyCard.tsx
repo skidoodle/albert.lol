@@ -27,7 +27,14 @@ const useSpotify = (): SpotifyData | undefined => {
 
 		socket.addEventListener("message", handleMessage);
 
+		const intervalId = setInterval(() => {
+			if (socket.readyState === WebSocket.OPEN) {
+				socket.send("ping");
+			}
+		}, 30000);
+
 		return () => {
+			clearInterval(intervalId);
 			socket.removeEventListener("message", handleMessage);
 			socket.close();
 		};
