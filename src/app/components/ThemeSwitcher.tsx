@@ -1,9 +1,9 @@
 "use client";
 
-import { VscColorMode } from "react-icons/vsc";
+import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { VscColorMode } from "react-icons/vsc";
 
 export const ThemeSwitcher = () => {
 	const { theme, setTheme } = useTheme();

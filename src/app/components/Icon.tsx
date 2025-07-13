@@ -1,10 +1,10 @@
+import type { IconType } from "@/utils/types";
 import copy from "copy-to-clipboard";
-import toast from "react-hot-toast";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import type { IconType } from "@/utils/types";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export const Icon = ({
 	children,

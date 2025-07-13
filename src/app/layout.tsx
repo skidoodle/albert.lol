@@ -1,9 +1,9 @@
-import type { Metadata, Viewport } from "next";
-import Script from "next/script";
-import type { ReactNode } from "react";
-import { Albert_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import age from "@/utils";
+import type { Metadata, Viewport } from "next";
+import { Albert_Sans } from "next/font/google";
+import Script from "next/script";
+import type { ReactNode } from "react";
 import "./globals.css";
 
 const albert_sans = Albert_Sans({

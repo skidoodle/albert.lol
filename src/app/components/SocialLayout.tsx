@@ -1,9 +1,9 @@
 "use client";
 
-import { Socials } from "@/components/data/Socials";
 import { Icon } from "@/components/Icon";
-import React, { memo } from "react";
+import { Socials } from "@/components/data/Socials";
 import { motion } from "framer-motion";
+import { memo } from "react";
 
 export const SocialLayout = memo(() => {
 	return (

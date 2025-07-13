@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
-import type { SpotifyData } from "@/utils/types";
-import { HiMusicNote } from "react-icons/hi";
 import { truncate } from "@/utils";
+import type { SpotifyData } from "@/utils/types";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { HiMusicNote } from "react-icons/hi";
 
 const useSpotify = (): SpotifyData | undefined => {
 	const [spotify, setSpotify] = useState<SpotifyData | undefined>(undefined);
@@ -118,7 +118,7 @@ export const NowPlayingCard = () => {
 
 	return (
 		<motion.div
-			className="mt-5 w-[325px] rounded-md shadow-lg p-3 dark:bg-black bg-white"
+			className="mt-5 w-[325px] rounded-md shadow-lg p-3 bg-white dark:bg-black transition-opacity duration-300"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5, ease: "easeInOut" }}

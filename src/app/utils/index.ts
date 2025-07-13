@@ -8,9 +8,7 @@ export default function age() {
 		return 0;
 	}
 
-	return Math.floor(
-		(new Date().getTime() - new Date(BIRTHDATE).getTime()) / 3.15576e10,
-	);
+	return Math.floor(Date.now() - new Date(BIRTHDATE).getTime() / 3.15576e10);
 }
 
 export const truncate = (str: string, n: number): string => {
