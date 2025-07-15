@@ -1,6 +1,6 @@
 import { FaDiscord, FaEnvelope, FaGithub, FaSteam } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
 import type { IconType } from "react-icons/lib";
+import { RiInstagramFill } from "react-icons/ri";
 
 type Social = {
 	id: number;

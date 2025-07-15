@@ -2,16 +2,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-	--dark-background: #282828;
-	--dark-primary: #323232;
-	--dark-secondary: #cecece;
-	--dark-text: #eeeeee;
+@theme {
+	--color-darkbackground: #202231;
+	--color-darkprimary: #2a2d3e;
+	--color-darksecondary: #9a9fbf;
+	--color-darktext: #e0e2f0;
 
-	--light-background: #eeeeee;
-	--light-primary: #dddddd;
-	--light-secondary: #5c5c5c;
-	--light-text: #222222;
+	--color-lightbackground: #f5f6fa;
+	--color-lightprimary: #ffffff;
+	--color-lightsecondary: #575a70;
+	--color-lighttext: #202231;
 }
 
 @layer base {

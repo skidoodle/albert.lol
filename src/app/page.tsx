@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast";
 
 export default function Home() {
 	return (
-		<div className="relative h-screen justify-center w-full group min-h-screen flex items-start">
+		<div className="relative h-screen justify-center w-full group min-h-screen flex items-start bg-lightbackground dark:bg-darkbackground text-lighttext dark:text-darktext z-10">
 			<div className="absolute inset-0 -z-10 w-full h-full pointer-events-none">
 				<Particles
 					speed={0.1}
@@ -38,7 +38,7 @@ export default function Home() {
 							animate={{ scale: 1 }}
 							transition={{ duration: 0.5 }}
 						>
-							<h1 className="text-[7.5rem] leading-none font-bold dark:text-[--dark-text] text-[--light-text]">
+							<h1 className="text-[7.5rem] leading-none font-bold dark:text-darktext text-lighttext">
 								albert
 							</h1>
 							<SocialLayout />

@@ -30,7 +30,7 @@ export const ThemeSwitcher = () => {
 		<motion.button
 			aria-label="Switch Theme"
 			type="button"
-			className="fixed top-5 right-5 p-3 rounded-full z-50"
+			className="fixed top-5 right-5 p-3 rounded-full z-50 cursor-pointer"
 			onClick={toggleTheme}
 			initial={{ opacity: 0, scale: 0.8 }}
 			animate={{ opacity: 1, scale: 1 }}

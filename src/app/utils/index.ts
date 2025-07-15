@@ -9,7 +9,8 @@ export default function age() {
 	}
 
 	return Math.floor(
-		(Date.now() - new Date(BIRTHDATE).getTime()) / (1000 * 60 * 60 * 24 * 365.25)
+		(Date.now() - new Date(BIRTHDATE).getTime()) /
+			(1000 * 60 * 60 * 24 * 365.25),
 	);
 }
 

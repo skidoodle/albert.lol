@@ -2,11 +2,10 @@
 
 import Particles from "@/components/Particles";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { specs } from "@/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Homelab() {
+export default function NotFound() {
 	return (
 		<div className="relative h-screen justify-center w-full group min-h-screen flex items-start bg-lightbackground dark:bg-darkbackground text-lighttext dark:text-darktext z-10">
 			<div className="absolute inset-0 -z-10 w-full h-full pointer-events-none">
@@ -53,27 +52,12 @@ export default function Homelab() {
 						animate={{ scale: 1 }}
 						transition={{ duration: 0.5 }}
 					>
-						<h1 className="text-[4.5rem] leading-none text-center font-bold dark:text-darktext text-lighttext">
-							My Homelab
+						<h1 className="text-[10rem] leading-none text-center font-bold dark:text-darktext text-lighttext">
+							404
 						</h1>
-						<div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 mx-4">
-							{specs.map((spec, index) => (
-								<motion.div
-									key={spec.title}
-									initial={{ opacity: 0, y: 20 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.2 + index * 0.1 }}
-									className="bg-lightprimary dark:bg-darkprimary backdrop-blur-sm rounded-xl p-6 shadow-lg"
-								>
-									<h3 className="text-lg font-medium text-gray-400">
-										{spec.title}
-									</h3>
-									<p className="text-xl mt-2 dark:text-[--dark-text] text-[--light-text]">
-										{spec.value}
-									</p>
-								</motion.div>
-							))}
-						</div>
+						<h2 className="text-3xl text-center font-semibold dark:text-darksecondary text-lightsecondary mb-4">
+							Page Not Found
+						</h2>
 					</motion.div>
 				</div>
 			</motion.div>
