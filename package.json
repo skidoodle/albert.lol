@@ -14,7 +14,7 @@
 		"clsx": "^2.1.1",
 		"copy-to-clipboard": "^3.3.3",
 		"framer-motion": "^12.23.3",
-		"next": "15.3.5",
+		"next": "15.4.7",
 		"next-themes": "^0.4.6",
 		"ogl": "^1.0.11",
 		"postcss": "^8.5.6",
