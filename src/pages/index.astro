@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/layout.astro';
+import Nowplaying from '../components/nowplaying.astro';
+import Whoami from '../components/whoami.astro';
+import Socials from '../components/socials.astro';
+import Projects from '../components/projects.astro';
+import Setup from '../components/setup.astro';
+
+const title = "albert";
+const description = "A 21-year-old developer and tech enthusiast. I enjoy working on my homelab and coding in TypeScript and Go.";
+---
+
+<Layout title={title} description={description}>
+    <h1>[{title}]</h1>
+    <Nowplaying />
+    <hr>
+    <Whoami />
+    <Socials />
+    <Projects />
+    <Setup />
+</Layout>

@@ -1,0 +1,14 @@
+{
+  "name": "albert.lol",
+  "type": "module",
+  "version": "6",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "5.16.4"
+  }
+}

@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+
+const schema = JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Albert",
+	"alternateName": "skidoodle",
+	"url": "https://albert.lol/",
+	"image": "https://albert.lol/static/preview.png",
+	"jobTitle": "Developer and Tech Enthusiast",
+	"description": "21-year-old developer and tech enthusiast. I enjoy working on my homelab and coding in TypeScript and Go.",
+	"knowsAbout": ["Web Development", "TypeScript", "Go", "Homelab", "Linux", "Open Source Projects"],
+	"sameAs": [
+		"https://github.com/skidoodle",
+		"https://steamcommunity.com/id/_albert",
+		"https://discord.com/users/637745537369767936"
+	],
+	"worksFor": {
+		"@type": "Organization",
+		"name": "Personal Projects / Open Source"
+	}
+});
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{title}</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<meta name="theme-color" content="#bb86fc">
+	<meta name="description" content={description}>
+
+	<meta property="og:title" content={title}>
+	<meta property="og:description" content={description}>
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://albert.lol/">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content={title}>
+	<meta name="twitter:description" content={description}>
+
+	<link rel="preload" href="/static/fonts/jetbrains.woff2" as="font" type="font/woff2" crossorigin>
+
+	<script is:inline defer src="https://analytics.albert.lol/script.js" data-website-id="2c900d5e-c577-4824-ad37-0cdf68383c42"></script>
+	<script is:inline type="application/ld+json" set:html={schema} />
+</head>
+<body>
+	<main>
+		<slot />
+	</main>
+</body>
+</html>

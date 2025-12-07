@@ -1,0 +1,20 @@
+albert.lol
+==========
+
+Personal portfolio source code.
+Built with Astro.
+
+-- setup --
+
+1. Install Bun (https://bun.sh)
+2. Run: bun install
+
+-- commands --
+
+bun dev      :: Start local development server
+bun build    :: Generate static files in dist/
+bun preview  :: Preview the production build
+
+-- deployment --
+
+Automatic via GitHub Actions to VPS.

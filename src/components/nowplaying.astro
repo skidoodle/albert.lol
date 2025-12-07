@@ -1,0 +1,21 @@
+<span id="nowplaying"></span>
+
+<script>
+  import { SpotifyClient } from '../scripts/spotify.js';
+  const spotifyClient = new SpotifyClient("wss://ws.albert.lol", "nowplaying");
+  spotifyClient.start();
+</script>
+
+<style>
+  #nowplaying {
+    display: block;
+    margin: 5px 0 5px var(--spacing-md);
+    font-size: 1rem;
+    line-height: 1;
+    height: 2em;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
