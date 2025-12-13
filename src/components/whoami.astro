@@ -1,16 +1,28 @@
 ---
-const birthDate = new Date('2004-07-22');
-const today = new Date();
-const age = Math.floor((today.getTime() - birthDate.getTime()) / 31557600000);
+const birthDate = new Date('2004-07-22')
+const today = new Date()
+
+let age = today.getFullYear() - birthDate.getFullYear()
+const monthDiff = today.getMonth() - birthDate.getMonth()
+
+if (
+  monthDiff < 0 ||
+  (monthDiff === 0 && today.getDate() < birthDate.getDate())
+) {
+  age--
+}
 ---
 
-<section class="whoami">
-    <h2>~/whoami</h2>
-    <p>I'm a <span id="age">{age}</span>-year-old developer and tech enthusiast. I enjoy working on my homelab and coding in TypeScript and Go.</p>
+<section class='whoami'>
+  <h2>~/whoami</h2>
+  <p>
+    I'm a <span id='age'>{age}</span>-year-old developer and tech enthusiast. I
+    enjoy working on my homelab and coding in TypeScript and Go.
+  </p>
 </section>
 
 <style>
-    .whoami p {
-        margin-inline-start: var(--spacing-md);
-    }
+  .whoami p {
+    margin-inline-start: var(--spacing-md);
+  }
 </style>

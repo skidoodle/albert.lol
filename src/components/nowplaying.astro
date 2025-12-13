@@ -1,9 +1,8 @@
-<span id="nowplaying"></span>
+<span id='nowplaying'></span>
 
 <script>
-  import { SpotifyClient } from '../scripts/spotify.js';
-  const spotifyClient = new SpotifyClient("wss://ws.albert.lol", "nowplaying");
-  spotifyClient.start();
+  import { SpotifyClient } from '../lib/spotify'
+  new SpotifyClient('wss://ws.albert.lol', 'nowplaying').start()
 </script>
 
 <style>
@@ -17,5 +16,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-height: 1em;
   }
 </style>

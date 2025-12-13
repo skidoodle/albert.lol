@@ -1,99 +1,86 @@
 ---
 const projects = [
-    { name: "spotify-ws", url: "https://github.com/skidoodle/spotify-ws", desc: "Gets now-playing-song from Spotify with WebSockets." },
-    { name: "ipinfo", url: "https://github.com/skidoodle/ipinfo", desc: "Shows details about any IP address or ASN." },
-    { name: "hostinfo", url: "https://github.com/skidoodle/hostinfo", desc: "Browser extension showing website origin details." },
-    { name: "mediaproxy", url: "https://github.com/skidoodle/mediaproxy", desc: "Proxy for caching and optimizing media." },
-    { name: "pastebin", url: "https://github.com/skidoodle/pastebin", desc: "Another simple pastebin app." },
-    { name: "albert.lol", url: "https://github.com/skidoodle/albert.lol", desc: "You're looking at it, built with Astro." },
-    { name: "budgetable", url: "https://github.com/skidoodle/budgetable", desc: "Tracks items to buy later." },
-    { name: "watch-together", url: "https://github.com/skidoodle/watch-together", desc: "Watch YouTube together with your friends." },
-    { name: "erettsegi-browser", url: "https://github.com/skidoodle/erettsegi-browser", desc: "Finds previous Hungarian graduation exams." },
-    { name: "ncore-stats", url: "https://github.com/skidoodle/ncore-stats", desc: "Tracks profile activity on nCore." },
-    { name: "ncore-leaderboard", url: "https://github.com/skidoodle/ncore-leaderboard", desc: "Scrapes and sorts profiles from nCore." },
-    { name: "iphistory", url: "https://github.com/skidoodle/iphistory", desc: "Monitors and records public IP address history." },
-];
+  {
+    name: 'spotify-ws',
+    url: 'https://github.com/skidoodle/spotify-ws',
+    desc: 'Gets now-playing-song from Spotify with WebSockets.',
+  },
+  {
+    name: 'ipinfo',
+    url: 'https://github.com/skidoodle/ipinfo',
+    desc: 'Shows details about any IP address or ASN.',
+  },
+  {
+    name: 'hostinfo',
+    url: 'https://github.com/skidoodle/hostinfo',
+    desc: 'Browser extension showing website origin details.',
+  },
+  {
+    name: 'mediaproxy',
+    url: 'https://github.com/skidoodle/mediaproxy',
+    desc: 'Proxy for caching and optimizing media.',
+  },
+  {
+    name: 'pastebin',
+    url: 'https://github.com/skidoodle/pastebin',
+    desc: 'Another simple pastebin app.',
+  },
+  {
+    name: 'albert.lol',
+    url: 'https://github.com/skidoodle/albert.lol',
+    desc: "You're looking at it, built with Astro.",
+  },
+  {
+    name: 'budgetable',
+    url: 'https://github.com/skidoodle/budgetable',
+    desc: 'Tracks items to buy later.',
+  },
+  {
+    name: 'watch-together',
+    url: 'https://github.com/skidoodle/watch-together',
+    desc: 'Watch YouTube together with your friends.',
+  },
+  {
+    name: 'erettsegi-browser',
+    url: 'https://github.com/skidoodle/erettsegi-browser',
+    desc: 'Finds previous Hungarian graduation exams.',
+  },
+  {
+    name: 'ncore-stats',
+    url: 'https://github.com/skidoodle/ncore-stats',
+    desc: 'Tracks profile activity on nCore.',
+  },
+  {
+    name: 'ncore-leaderboard',
+    url: 'https://github.com/skidoodle/ncore-leaderboard',
+    desc: 'Scrapes and sorts profiles from nCore.',
+  },
+  {
+    name: 'iphistory',
+    url: 'https://github.com/skidoodle/iphistory',
+    desc: 'Monitors and records public IP address history.',
+  },
+]
 ---
 
-<section class="projects">
-    <details>
-        <summary>~/projects</summary>
-        <div>
-            <dl>
-                {projects.map((project) => (
-                    <>
-                        <dt>
-                            <a href={project.url} target="_blank" rel="noopener noreferrer">
-                                {project.name}
-                            </a>
-                        </dt>
-                        <dd set:html={project.desc} />
-                    </>
-                ))}
-            </dl>
-        </div>
-    </details>
+<section class='projects details-list'>
+  <details>
+    <summary>~/projects</summary>
+    <div>
+      <dl>
+        {
+          projects.map(project => (
+            <>
+              <dt>
+                <a href={project.url} target='_blank' rel='noopener noreferrer'>
+                  {project.name}
+                </a>
+              </dt>
+              <dd set:html={project.desc} />
+            </>
+          ))
+        }
+      </dl>
+    </div>
+  </details>
 </section>
-
-<style>
-    a {
-        color: var(--primary-color);
-        text-decoration: underline;
-    }
-
-    a:hover {
-        color: var(--hover-color);
-    }
-
-    dt {
-        color: var(--primary-color);
-        font-weight: bold;
-        font-size: 1.17em;
-        margin-inline-start: var(--spacing-md);
-        margin-top: 1rem;
-    }
-
-    dt:first-of-type {
-        margin-top: 0;
-    }
-
-    dd {
-        margin-inline-start: var(--spacing-lg);
-    }
-
-    details {
-        font-family: "JetBrains Mono", monospace;
-    }
-
-    summary {
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--primary-color);
-        font-size: 1.3em;
-        font-weight: bold;
-        margin-block: 1.5rem 0.5rem;
-        list-style: none;
-    }
-
-    summary::-webkit-details-marker {
-        display: none;
-    }
-
-    summary::after {
-        content: ' ▼';
-        font-size: 0.6em;
-        opacity: 0.7;
-        margin-inline-start: 0.3rem;
-    }
-
-    details[open] > summary::after {
-        content: ' ▲';
-    }
-
-    details > div {
-        margin-top: 1rem;
-        margin-inline-start: var(--spacing-md);
-    }
-</style>
