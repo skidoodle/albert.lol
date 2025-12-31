@@ -1,0 +1,88 @@
+---
+const services = [
+    {
+        name: 'gitea',
+        url: 'https://git.albert.lol',
+    },
+    {
+        name: 'pastebin',
+        url: 'https://bin.albert.lol',
+    },
+    {
+        name: 'opengist',
+        url: 'https://gist.albert.lol',
+    },
+    {
+        name: 'filebrowser',
+        url: 'https://files.albert.lol',
+    },
+    {
+        name: 'ipinfo',
+        url: 'https://ip.albert.lol',
+    },
+    {
+        name: 'teamspeak',
+        url: 'https://ts.albert.lol',
+    },
+    {
+        name: 'erettsegi',
+        url: 'https://erettsegi.albert.lol',
+    },
+    {
+        name: 'ncore-stats',
+        url: 'https://nc.albert.lol',
+    },
+    {
+        name: 'httpdebug',
+        url: 'https://httpdebug.albert.lol',
+    },
+    {
+        name: 'statuspage',
+        url: 'https://status.albert.lol',
+    },
+    {
+        name: 'watch-together',
+        url: 'https://wt.albert.lol',
+    },
+    {
+        name: 'budgetable',
+        url: 'https://budgetable.demo.albert.lol',
+    },
+]
+---
+
+<section class='services details-list'>
+    <details>
+        <summary>~/services</summary>
+        <div>
+            <dl>
+                {
+                    services.map(service => (
+                        <dt>
+                            <a
+                                href={service.url}
+                                target='_blank'
+                                rel='noopener noreferrer'>
+                                {service.name}
+                            </a>
+                        </dt>
+                    ))
+                }
+            </dl>
+        </div>
+    </details>
+</section>
+
+<style>
+    dl {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 0.5rem;
+        padding-block: 1rem;
+    }
+
+    dt {
+        margin: 0 !important;
+        white-space: nowrap;
+    }
+</style>
