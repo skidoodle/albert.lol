@@ -10,19 +10,74 @@ const { title, description } = Astro.props;
 
 const schema = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Albert",
-    alternateName: "skidoodle",
-    url: "https://albert.lol/",
-    image: "https://albert.lol/static/preview.png",
-    jobTitle: "Developer and Tech Enthusiast",
-    description: description,
-    knowsAbout: ["Web Development", "TypeScript", "Go", "Homelab", "Linux", "Open Source Projects"],
-    sameAs: ["https://github.com/skidoodle", "https://steamcommunity.com/id/_albert", "https://discord.com/users/637745537369767936"],
-    worksFor: {
-        "@type": "Organization",
-        name: "Personal Projects / Open Source",
-    },
+    "@graph": [
+        {
+            "@type": "ProfilePage",
+            "@id": "https://albert.lol/#webpage",
+            "url": "https://albert.lol/",
+            "lastReviewed": new Date().toISOString().split("T")[0],
+            "mainEntity": {
+                "@id": "https://albert.lol/#person",
+            },
+        },
+        {
+            "@type": "Person",
+            "@id": "https://albert.lol/#person",
+            "name": "albert",
+            "alternateName": "skidoodle",
+            "url": "https://albert.lol/",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://albert.lol/static/preview.png",
+                "caption": "albert",
+            },
+            "jobTitle": "Developer and Tech Enthusiast",
+            "description": description,
+            "sameAs": "https://github.com/skidoodle",
+            "knowsAbout": [
+                {
+                    "@type": "Thing",
+                    "name": "TypeScript",
+                    "sameAs": "https://www.wikidata.org/wiki/Q978185",
+                },
+                {
+                    "@type": "Thing",
+                    "name": "Go",
+                    "sameAs": "https://www.wikidata.org/wiki/Q37227",
+                },
+                {
+                    "@type": "Thing",
+                    "name": "Linux",
+                    "sameAs": "https://www.wikidata.org/wiki/Q388",
+                },
+                {
+                    "@type": "Thing",
+                    "name": "Web Development",
+                    "sameAs": "https://www.wikidata.org/wiki/Q386275",
+                },
+                {
+                    "@type": "Thing",
+                    "name": "DevOps",
+                    "sameAs": "https://www.wikidata.org/wiki/Q3025536",
+                },
+                {
+                    "@type": "Thing",
+                    "name": "Homelab",
+                    "sameAs": "https://www.wikidata.org/wiki/Q750110",
+                },
+                {
+                    "@type": "Thing",
+                    "name": "Open Source",
+                    "sameAs": "https://www.wikidata.org/wiki/Q39162",
+                },
+                {
+                    "@type": "Thing",
+                    "name": "Technology",
+                    "sameAs": "https://www.wikidata.org/wiki/Q11016",
+                },
+            ],
+        },
+    ],
 });
 ---
 
