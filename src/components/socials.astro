@@ -1,60 +1,48 @@
 ---
-import Icon from './icon.astro'
+import Icon from "./icon.astro";
 ---
 
-<section class='socials'>
-  <h2>~/socials</h2>
-  <nav>
-    <a
-      href='https://github.com/skidoodle'
-      target='_blank'
-      rel='noopener noreferrer'
-      aria-label='GitHub'>
-      <Icon name='github' />
-    </a>
-    <a
-      href='https://steamcommunity.com/id/_albert'
-      target='_blank'
-      rel='noopener noreferrer'
-      aria-label='Steam'>
-      <Icon name='steam' />
-    </a>
-    <a href='mailto:contact@albert.lol' aria-label='Email'>
-      <Icon name='mail' />
-    </a>
-    <a
-      href='https://discord.com/users/637745537369767936'
-      target='_blank'
-      rel='noopener noreferrer'
-      aria-label='Discord'>
-      <Icon name='discord' />
-    </a>
-  </nav>
+<section class="socials">
+    <h2>~/socials</h2>
+    <nav>
+        <a href="https://github.com/skidoodle" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <Icon name="github" />
+        </a>
+        <a href="https://steamcommunity.com/id/_albert" target="_blank" rel="noopener noreferrer" aria-label="Steam">
+            <Icon name="steam" />
+        </a>
+        <a href="mailto:contact@albert.lol" aria-label="Email">
+            <Icon name="mail" />
+        </a>
+        <a href="https://discord.com/users/637745537369767936" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+            <Icon name="discord" />
+        </a>
+    </nav>
 </section>
 
 <style>
-  .socials nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem;
-    margin-inline-start: var(--spacing-md);
-  }
+    .socials nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+        margin-inline-start: var(--spacing-md);
+    }
 
-  .socials a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.3em;
-    border-radius: 50%;
-    color: var(--text-color);
-    transition:
-      color 0.2s,
-      transform 0.2s;
-  }
+    .socials a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3em;
+        border-radius: 50%;
+        color: var(--text-color);
+        transition:
+            color 0.2s,
+            transform 0.2s;
+    }
 
-  .socials a:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-  }
+    .socials a:hover {
+        color: var(--primary-color);
+        transform: scale(1.1);
+    }
 </style>
