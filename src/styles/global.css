@@ -101,11 +101,11 @@ hr {
     margin-inline-start: 0.3rem;
 }
 
-.details-list details[open] > summary::after {
+.details-list details[open]>summary::after {
     content: " ▲";
 }
 
-.details-list details > div {
+.details-list details>div {
     margin-top: 1rem;
     margin-inline-start: var(--spacing-md);
 }

@@ -1,6 +1,11 @@
 ---
 const projects = [
     {
+        name: "ctx",
+        url: "https://github.com/skidoodle/ctx",
+        desc: "Converts codebases into markdown for LLM context.",
+    },
+    {
         name: "safebin",
         url: "https://github.com/skidoodle/safebin",
         desc: "Secure file storage using convergent encryption.",
@@ -77,7 +82,11 @@ const projects = [
                     projects.map((project) => (
                         <>
                             <dt>
-                                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     {project.name}
                                 </a>
                             </dt>

@@ -14,66 +14,66 @@ const schema = JSON.stringify({
         {
             "@type": "ProfilePage",
             "@id": "https://albert.lol/#webpage",
-            "url": "https://albert.lol/",
-            "lastReviewed": new Date().toISOString().split("T")[0],
-            "mainEntity": {
+            url: "https://albert.lol/",
+            lastReviewed: new Date().toISOString().split("T")[0],
+            mainEntity: {
                 "@id": "https://albert.lol/#person",
             },
         },
         {
             "@type": "Person",
             "@id": "https://albert.lol/#person",
-            "name": "albert",
-            "alternateName": "skidoodle",
-            "url": "https://albert.lol/",
-            "image": {
+            name: "albert",
+            alternateName: "skidoodle",
+            url: "https://albert.lol/",
+            image: {
                 "@type": "ImageObject",
-                "url": "https://albert.lol/static/preview.png",
-                "caption": "albert",
+                url: "https://albert.lol/static/preview.png",
+                caption: "albert",
             },
-            "jobTitle": "Developer and Tech Enthusiast",
-            "description": description,
-            "sameAs": "https://github.com/skidoodle",
-            "knowsAbout": [
+            jobTitle: "Developer and Tech Enthusiast",
+            description: description,
+            sameAs: "https://github.com/skidoodle",
+            knowsAbout: [
                 {
                     "@type": "Thing",
-                    "name": "TypeScript",
-                    "sameAs": "https://www.wikidata.org/wiki/Q978185",
+                    name: "TypeScript",
+                    sameAs: "https://www.wikidata.org/wiki/Q978185",
                 },
                 {
                     "@type": "Thing",
-                    "name": "Go",
-                    "sameAs": "https://www.wikidata.org/wiki/Q37227",
+                    name: "Go",
+                    sameAs: "https://www.wikidata.org/wiki/Q37227",
                 },
                 {
                     "@type": "Thing",
-                    "name": "Linux",
-                    "sameAs": "https://www.wikidata.org/wiki/Q388",
+                    name: "Linux",
+                    sameAs: "https://www.wikidata.org/wiki/Q388",
                 },
                 {
                     "@type": "Thing",
-                    "name": "Web Development",
-                    "sameAs": "https://www.wikidata.org/wiki/Q386275",
+                    name: "Web Development",
+                    sameAs: "https://www.wikidata.org/wiki/Q386275",
                 },
                 {
                     "@type": "Thing",
-                    "name": "DevOps",
-                    "sameAs": "https://www.wikidata.org/wiki/Q3025536",
+                    name: "DevOps",
+                    sameAs: "https://www.wikidata.org/wiki/Q3025536",
                 },
                 {
                     "@type": "Thing",
-                    "name": "Homelab",
-                    "sameAs": "https://www.wikidata.org/wiki/Q750110",
+                    name: "Homelab",
+                    sameAs: "https://www.wikidata.org/wiki/Q750110",
                 },
                 {
                     "@type": "Thing",
-                    "name": "Open Source",
-                    "sameAs": "https://www.wikidata.org/wiki/Q39162",
+                    name: "Open Source",
+                    sameAs: "https://www.wikidata.org/wiki/Q39162",
                 },
                 {
                     "@type": "Thing",
-                    "name": "Technology",
-                    "sameAs": "https://www.wikidata.org/wiki/Q11016",
+                    name: "Technology",
+                    sameAs: "https://www.wikidata.org/wiki/Q11016",
                 },
             ],
         },
@@ -95,16 +95,32 @@ const schema = JSON.stringify({
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://albert.lol/" />
-        <meta property="og:image" content="https://albert.lol/static/preview.png" />
+        <meta
+            property="og:image"
+            content="https://albert.lol/static/preview.png"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://albert.lol/static/preview.png" />
+        <meta
+            name="twitter:image"
+            content="https://albert.lol/static/preview.png"
+        />
 
-        <link rel="preload" href="/static/fonts/jetbrains.woff2" as="font" type="font/woff2" crossorigin />
+        <link
+            rel="preload"
+            href="/static/fonts/jetbrains.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
 
-        <script is:inline defer src="https://analytics.albert.lol/script.js" data-website-id="2c900d5e-c577-4824-ad37-0cdf68383c42"></script>
+        <script
+            is:inline
+            defer
+            src="https://analytics.albert.lol/script.js"
+            data-website-id="2c900d5e-c577-4824-ad37-0cdf68383c42"></script>
         <script is:inline type="application/ld+json" set:html={schema} />
     </head>
     <body>
